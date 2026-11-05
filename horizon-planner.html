@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.className += " js";</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Horizon Planner | Kimball Hansen</title>
+<meta name="description" content="Scoping, designing, and shipping a career roadmapping web app for a social impact consultancy, in React and Next.js.">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Horizon Planner | Kimball Hansen">
+<meta property="og:description" content="Scoping, designing, and shipping a career roadmapping web app for a social impact consultancy, in React and Next.js.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Horizon Planner | Kimball Hansen">
+<meta name="twitter:description" content="Scoping, designing, and shipping a career roadmapping web app for a social impact consultancy, in React and Next.js.">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a class="wordmark" href="index.html">Kimball Hansen</a>
+
+    <button class="nav__toggle" type="button" aria-controls="nav-menu" aria-expanded="false">Menu</button>
+
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="nav-menu">
+        <li><a class="back-link" href="index.html#work">← Back to work</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a class="btn btn--secondary" href="assets/resume.pdf">Resume</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav__close" type="button">Close</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <article>
+    <section class="case-head wrap" aria-labelledby="case-title">
+      <p class="eyebrow">Product and Strategy · Daybreak Collaborative · 2026</p>
+      <h1 class="h-hero" id="case-title">Horizon Planner</h1>
+      <p class="lead">A career diagnostic and roadmapping web app that took a consultancy's best advice out of
+        one-on-one calls and put it in front of anyone who needed it.</p>
+
+      <div class="metrics" style="--metric-cols: 3">
+        <div class="metric" data-reveal>
+          <p class="metric__figure">100+</p>
+          <p class="eyebrow metric__label">Users in the launch month</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap case-body" aria-labelledby="context-heading">
+      <div class="case-section" id="context">
+        <h2 id="context-heading">Context</h2>
+        <p>Daybreak Collaborative is a social impact consultancy. Careers in that sector do not have the
+          legible ladder that finance and consulting do. The same title means different things at a foundation,
+          a nonprofit, and an impact fund, and the path from one role to the next travels mostly by word of
+          mouth. People early in the sector ask the same handful of questions, and they ask them of whoever
+          will pick up the phone.</p>
+        <p>Daybreak had good answers. The problem was where those answers lived: in the founder's head, handed
+          out one conversation at a time. That does not scale, it does not compound, and a small firm cannot
+          bill for it at any sensible rate.</p>
+        <p>The brief was to turn the advice into something a person could use without a call. Not a course and
+          not a PDF. A tool: someone describes where they are, what they can and cannot move on, and where they
+          want to end up, and gets back a sequenced plan instead of a list of links. I was brought in to scope
+          it, and stayed on to design the logic and build it.</p>
+      </div>
+
+      <div class="case-section">
+        <h2>What I did</h2>
+        <p>Scoping came first. I interviewed the founder to pull the advice out into something written down,
+          then talked to people in the target group to find out which questions they were actually stuck on.
+          The two lists were not the same. The founder talked about long-run positioning; users wanted to know
+          what to do in the next three months. That gap set the shape of the product.</p>
+        <p>From there I defined the flow: a short intake, a diagnostic that places someone honestly rather than
+          flatteringly, and a roadmap sequenced into near, middle, and long term. I designed the recommendation
+          logic as an explicit rule set mapping background, constraints, and goals onto ordered steps, and kept
+          the rules readable so the founder could revise them without coming back to me. A model that only its
+          author can maintain is a liability disguised as an asset.</p>
+        <p>Then I built it. React and Next.js, version-controlled in Git, deployed and handed over. I wrote the
+          question set, implemented the scoring, and worked through the edge cases that break this kind of
+          tool: career changers with no sector experience, people optimizing for geography over role, and
+          anyone whose stated goal did not match their stated constraints.</p>
+      </div>
+
+      <div class="case-section">
+        <h2>Result</h2>
+        <p>More than 100 people used the tool in its launch month. For a small firm with no paid distribution,
+          that was the number that mattered: it showed the demand was real and that the advice traveled
+          without the founder attached to it.</p>
+        <p>The rest of the outcome is qualitative, and I would rather say so than dress it up. Daybreak now has
+          an asset instead of a repeated conversation, and a version of its thinking that it can point clients
+          and applicants toward. No cohort has been tracked long enough yet to say anything credible about whether
+          the plans changed what people did. When that data exists, it belongs here.</p>
+      </div>
+
+      <div class="case-section">
+        <h2>What I would do differently</h2>
+        <p>I designed the recommendation logic before I had enough real inputs in front of me. Testing a paper
+          version on ten people first would have surfaced the edge cases in a week instead of in code.</p>
+        <p>I also over-scoped the first release. Several features were built because they were obvious, not
+          because anyone asked for them, and the launch slipped for it. A narrower version shipped earlier
+          would have taught me more.</p>
+        <p>The clearest miss is instrumentation. I did not build enough tracking to know what people do after
+          they see their roadmap, which is precisely the question worth answering. That is a decision I would
+          reverse on day one of the next build.</p>
+      </div>
+
+      <div class="case-section">
+        <h2>Tools and methods</h2>
+        <ul class="methods">
+          <li>User scoping interviews</li>
+          <li>Information architecture</li>
+          <li>Recommendation logic design</li>
+          <li>React</li>
+          <li>Next.js</li>
+          <li>Git</li>
+        </ul>
+      </div>
+    </section>
+  </article>
+
+</main>
+
+<nav class="case-nav" aria-label="Other case studies">
+  <div class="wrap case-nav__inner">
+    <div class="case-nav__item">
+      <p class="eyebrow">Previous</p>
+      <a href="lawn-care.html">Lawn and Landscape Company</a>
+    </div>
+    <div class="case-nav__item case-nav__item--next">
+      <p class="eyebrow">Next</p>
+      <a href="chick-fil-a.html">Franchise Growth Program</a>
+    </div>
+  </div>
+</nav>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p>Kimball Hansen · <span class="todo" title="Replace before publishing">{{DOMAIN}}</span></p>
+    <p>Last updated November 2026</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
