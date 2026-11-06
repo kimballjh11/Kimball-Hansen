@@ -925,7 +925,7 @@ body.has-tabbar { padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bot
 .map-lists .small { margin-top: 8px; color: var(--ink-muted); }
 
 /* Tooltip card text for markers comes from .place-list items. */
-.tip strong { margin-bottom: 2px; }
+.tip strong:not(:last-child) { margin-bottom: 2px; }
 .tip .todo { color: #664D03; }
 
 .country-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
@@ -973,7 +973,6 @@ body.has-tabbar { padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bot
   background: #fff; overflow: hidden;
 }
 .acc__logo img { width: 100%; height: 100%; object-fit: contain; }
-.acc__logo img.acc__logo-pad { padding: 6px; }
 .acc__logo--icon { background: var(--surface-2); color: var(--blue-ink); }
 .acc__logo--icon svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
 .acc__logo--text { font-size: 1.5rem; font-weight: 700; line-height: 1; }

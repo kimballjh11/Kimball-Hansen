@@ -74,7 +74,8 @@
   }
 
   function stateHtml(s) {
-    return "<strong>" + s.getAttribute("data-name") + "</strong>" + s.getAttribute("data-status");
+    // Name only: the fill color already shows visited or not.
+    return "<strong>" + s.getAttribute("data-name") + "</strong>";
   }
 
   // Markers show the place name only.
