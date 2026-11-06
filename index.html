@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=10">
 </head>
 
 <body class="has-tabbar">
@@ -460,26 +460,133 @@
         <h2 class="h-panel" id="education-heading" data-panel-heading tabindex="-1">Education</h2>
       </header>
 
-      <div class="card">
-        <div class="card__head">
-          <div>
-            <h3 class="h-card">Brigham Young University, Marriott School of Business</h3>
-            <p class="card__meta">B.S. Strategic Management · Provo, Utah · Expected April 2028</p>
+      <div class="grid grid--bio">
+        <div class="card">
+          <div class="card__head">
+            <div>
+              <h3 class="h-card">Brigham Young University, Marriott School of Business</h3>
+              <p class="card__meta">Provo, Utah · Fall 2022 to April 2028 (expected)</p>
+            </div>
+            <span class="badge badge--shipped">GPA 3.90</span>
           </div>
-          <span class="badge badge--shipped">GPA 3.90</span>
+          <dl class="facts" style="margin-top:18px">
+            <div class="facts__row"><dt>Degree</dt><dd>B.S. Strategic Management</dd></div>
+            <div class="facts__row"><dt>Minors</dt><dd>International Strategy and Diplomacy, and Political Science</dd></div>
+            <div class="facts__row"><dt>Certificate</dt><dd>Global Business Certificate, in progress</dd></div>
+            <div class="facts__row"><dt>Scholarship</dt><dd>BYU Academic Scholarship, merit based</dd></div>
+            <div class="facts__row"><dt>Note</dt><dd>Two year pause from 2023 to 2025 for full time volunteer service.</dd></div>
+          </dl>
         </div>
-        <p class="card__body">Minors in International Strategy and Diplomacy and Political Science. BYU Academic
-          Scholarship, merit based.</p>
-        <div class="btn-row card__foot">
-          <a class="btn btn--primary" href="assets/transcript.pdf" target="_blank" rel="noopener">View transcript</a>
-          <a class="btn btn--secondary" href="assets/transcript.pdf" download="Kimball-Hansen-BYU-transcript.pdf">Download PDF</a>
+
+        <div class="card">
+          <h3 class="h-card">Transcript</h3>
+          <p class="card__body">Official BYU transcript. My student ID, birth date, and AP exam scores are redacted.</p>
+          <div class="btn-row card__foot">
+            <a class="btn btn--primary" href="assets/transcript.pdf" target="_blank" rel="noopener">View transcript</a>
+            <a class="btn btn--secondary" href="assets/transcript.pdf" download="Kimball-Hansen-BYU-transcript.pdf">Download PDF</a>
+          </div>
+          <h3 class="h-card" style="margin-top:24px">Case competitions</h3>
+          <ul class="bullets" style="margin-top:10px">
+            <li>Bain &amp; Company, finalist</li>
+            <li>BYU M&amp;A/LBO, finalist</li>
+            <li>Sunoco expansion strategy, finalist</li>
+          </ul>
+          <h3 class="h-card" style="margin-top:24px">Associations</h3>
+          <ul class="tags" style="margin-top:10px">
+            <li>Management Consulting Association</li>
+            <li>Investment Banking Association</li>
+            <li>Private Equity Association</li>
+            <li>International Development Club</li>
+          </ul>
         </div>
       </div>
 
-      <div class="callout no-print" style="margin-top:16px">
-        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6.5v.01"/></svg>
-        <p>Phase 4 adds coursework by area, case competitions, associations, and the inline transcript viewer.</p>
+      <!-- Inline transcript preview: desktop only, loads on request. -->
+      <details class="acc pdf-panel" style="margin-top:16px">
+        <summary><span class="acc__title">Preview the transcript here</span></summary>
+        <div class="acc__body">
+          <div class="embed embed--pdf" id="pdf-slot">
+            <p class="muted small">The PDF loads only when you ask for it.</p>
+            <button class="btn btn--secondary btn--sm" type="button" data-embed="pdf" data-src="assets/transcript.pdf"
+                    data-title="Kimball Hansen BYU transcript" aria-controls="pdf-slot" hidden>Load the preview</button>
+          </div>
+        </div>
+      </details>
+
+      <h3 class="h-group">Coursework</h3>
+      <p class="muted small" style="margin:-6px 0 14px">Starred courses are the most relevant to strategy, consulting, and international work. Courses marked In progress are this semester.</p>
+
+      <div class="grid grid--2 courses">
+        <div class="card">
+          <h4 class="h-card">Strategy and management</h4>
+          <ul class="course-list">
+            <li class="is-key"><span class="course__code">STRAT 401</span>Foundations of Strategy<span class="course__tag">In progress</span></li>
+            <li class="is-key"><span class="course__code">STRAT 402</span>Economics of Strategy<span class="course__tag">In progress</span></li>
+            <li class="is-key"><span class="course__code">STRAT 325</span>Introduction to Management Consulting</li>
+            <li><span class="course__code">STRAT 326</span>Career Development<span class="course__tag">In progress</span></li>
+            <li><span class="course__code">ENT 101</span>Introduction to Entrepreneurship</li>
+            <li><span class="course__code">M COM 320</span>Management Communication</li>
+            <li><span class="course__code">ACC 241</span>Business Law</li>
+            <li><span class="course__code">MSB 380</span>Executive Lectures<span class="course__tag">In progress</span></li>
+            <li><span class="course__code">MSB 180</span>Business Career Lecture Series</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4 class="h-card">International and political science</h4>
+          <ul class="course-list">
+            <li class="is-key"><span class="course__code">MSB 430</span>Introduction to International Business<span class="course__tag">In progress</span></li>
+            <li class="is-key"><span class="course__code">POLI 357</span>Middle East Politics<span class="course__tag">In progress</span></li>
+            <li class="is-key"><span class="course__code">GSCM 201</span>Introduction to Global Supply Chain Management</li>
+            <li><span class="course__code">GSCM 211</span>Introduction to Global Supply Chain Management, International</li>
+            <li><span class="course__code">POLI 250</span>Principles of Comparative Politics</li>
+          </ul>
+          <h4 class="h-card" style="margin-top:20px">Languages</h4>
+          <ul class="course-list">
+            <li><span class="course__code">SPAN 321</span>Third Year Spanish Reading, Grammar, and Culture</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4 class="h-card">Finance and accounting</h4>
+          <ul class="course-list">
+            <li class="is-key"><span class="course__code">FIN 201</span>Principles of Finance</li>
+            <li><span class="course__code">ACC 200</span>Principles of Accounting</li>
+            <li><span class="course__code">ECON 110</span>Economic Principles and Problems</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4 class="h-card">Data and analytics</h4>
+          <ul class="course-list">
+            <li class="is-key"><span class="course__code">STAT 121</span>Introduction to Statistical Data Analysis</li>
+            <li><span class="course__code">IS 110</span>Spreadsheets and Business Analysis</li>
+            <li><span class="course__code">IS 201</span>Introduction to Information Systems</li>
+            <li><span class="course__code">IS 111</span>Introduction to AI in Business<span class="course__tag">In progress</span></li>
+          </ul>
+        </div>
       </div>
+
+      <details class="acc" style="margin-top:16px">
+        <summary><span class="acc__title">General education</span><span class="acc__meta">13 courses</span></summary>
+        <div class="acc__body">
+          <ul class="course-list course-list--cols">
+            <li><span class="course__code">A HTG 100</span>American Heritage</li>
+            <li><span class="course__code">WRTG 150</span>Writing and Rhetoric</li>
+            <li><span class="course__code">PHIL 110</span>Introduction to Philosophy</li>
+            <li><span class="course__code">IHUM 201</span>Western Humanities 1</li>
+            <li><span class="course__code">IHUM 241</span>Humanities of East Asia</li>
+            <li><span class="course__code">GEOL 109</span>Geology of Planets</li>
+            <li><span class="course__code">PHY S 100</span>Physical Science</li>
+            <li><span class="course__code">NDFS 100</span>Essentials of Human Nutrition</li>
+            <li><span class="course__code">STDEV 117</span>Career Exploration</li>
+            <li><span class="course__code">REL A 250</span>Christ and His Everlasting Gospel</li>
+            <li><span class="course__code">REL A 275</span>Teachings and Doctrine of the Book of Mormon</li>
+            <li><span class="course__code">REL C 225</span>Foundations of the Restoration</li>
+            <li><span class="course__code">REL C 333</span>The Living Prophets</li>
+          </ul>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -492,66 +599,253 @@
         <p class="lead">Tools I built to make a decision easier.</p>
       </header>
 
-      <div class="grid grid--2">
-        <article class="card card--lift">
-          <div class="card__head">
-            <h3 class="h-card">Horizon Planner</h3>
-            <span class="badge badge--shipped">Shipped</span>
-          </div>
-          <p class="card__meta">Daybreak Collaborative · 2026</p>
-          <p class="card__body">A career diagnostic that turns a short intake into a personalized roadmap for people
-            working in social impact. Over 100 people used it in the launch month.</p>
-          <details class="acc" style="margin-top:16px">
-            <summary><span class="acc__title">How it works</span></summary>
-            <div class="acc__body">
-              <ul class="bullets">
-                <li>Visitors answer a short intake about their sector and a few reflective questions, with an optional resume upload.</li>
-                <li>Claude generates a roadmap with a tailored power statement, a 30, 60, and 90 day action plan, and curated resources.</li>
-                <li>Results download as a PDF and are emailed to the user.</li>
-              </ul>
+      <div class="grid grid--2 projects">
+
+        <!-- 1 Horizon Planner (full width, with the live tool) -->
+        <article class="card project project--wide" id="project-horizon">
+          <div class="project__wide">
+            <div>
+              <div class="card__head">
+                <h3 class="h-card">Horizon Planner</h3>
+                <span class="badge badge--shipped">Shipped</span>
+              </div>
+              <p class="card__meta">Daybreak Collaborative · 2026</p>
+              <p class="card__body">A career diagnostic that turns a short intake into a personalized roadmap for people
+                working in social impact. It had 100+ users in its launch month and has been downloaded several
+                thousand times.</p>
+
+              <details class="acc acc--inner">
+                <summary><span class="acc__title">How it works</span></summary>
+                <div class="acc__body">
+                  <ul class="bullets">
+                    <li>Visitors answer a short intake about their sector and a few reflective questions, with an optional resume or questionnaire upload.</li>
+                    <li>Claude generates a personalized roadmap with a tailored power statement, a 30, 60, and 90 day action plan, and curated resources.</li>
+                    <li>Results download as a PDF and are emailed to the user.</li>
+                  </ul>
+                </div>
+              </details>
+
+              <details class="acc acc--inner">
+                <summary><span class="acc__title">View the files</span></summary>
+                <div class="acc__body">
+                  <ul class="tree" aria-label="Horizon Planner repository files">
+                    <li><span class="tree__name tree__name--dir">app</span><span class="tree__note">Pages and API routes: generate, email, upload, feedback</span></li>
+                    <li><span class="tree__name tree__name--dir">components</span><span class="tree__note">Intake steps, output sections, shared UI</span></li>
+                    <li><span class="tree__name tree__name--dir">lib</span><span class="tree__note">Claude, email, Supabase, prompts, rate limits</span>
+                      <ul>
+                        <li><span class="tree__name">prompts.ts</span><span class="tree__note">The roadmap prompt</span></li>
+                        <li><span class="tree__name">sectors.ts</span><span class="tree__note">Sector definitions for the intake</span></li>
+                      </ul>
+                    </li>
+                    <li><span class="tree__name">supabase-schema.sql</span><span class="tree__note">Database schema</span></li>
+                    <li><span class="tree__name">.env.example</span><span class="tree__note">Required settings, no secrets</span></li>
+                  </ul>
+                  <a class="btn btn--secondary btn--sm" style="margin-top:12px" href="https://github.com/kimballjh11/Social.Impact.Career.Trajectory">Open the repo on GitHub</a>
+                </div>
+              </details>
+
+              <ul class="tags"><li>Next.js 16</li><li>React 19</li><li>Tailwind CSS 4</li><li>Claude API</li><li>Supabase</li><li>Resend</li><li>Replit</li></ul>
+              <div class="btn-row card__foot">
+                <a class="btn btn--primary btn--sm" href="horizon-planner.html">Case study</a>
+                <a class="btn btn--secondary btn--sm" href="https://www.daybreak-collaborative.com/horizon-planner/">Open the live tool</a>
+              </div>
             </div>
-          </details>
-          <ul class="tags"><li>Next.js</li><li>React</li><li>Claude API</li><li>Supabase</li></ul>
-          <div class="btn-row card__foot">
-            <a class="btn btn--primary btn--sm" href="horizon-planner.html">Case study</a>
-            <a class="btn btn--secondary btn--sm" href="https://www.daybreak-collaborative.com/horizon-planner/">Live tool</a>
+
+            <div class="embed" id="hp-slot">
+              <div class="embed__placeholder">
+                <p class="h-card">Try the live tool here</p>
+                <p class="muted small">Each submission runs Claude and sends an email, so the tool loads only when you ask.</p>
+                <button class="btn btn--primary btn--sm" type="button" data-embed="iframe"
+                        data-src="https://www.daybreak-collaborative.com/horizon-planner/"
+                        data-title="Horizon Planner, live tool" aria-controls="hp-slot" hidden>Load the live tool</button>
+                <a class="small" href="https://www.daybreak-collaborative.com/horizon-planner/">Or open it in a new tab</a>
+              </div>
+            </div>
           </div>
         </article>
 
-        <article class="card card--lift">
+        <!-- 2 Claude day trading agent -->
+        <article class="card card--lift project" id="project-trader">
           <div class="card__media">
-            <img src="assets/projects/trader-dashboard.png" width="1170" height="825" loading="lazy"
-                 alt="Trading agent dashboard showing an illustrative October simulation: equity lines for the Claude book, the rules only control book, and SPY.">
+            <img src="assets/projects/trader-dashboard.jpg" width="1170" height="825" loading="lazy"
+                 alt="Trading agent dashboard labeled as an illustrative October simulation, with equity lines for the Claude book, the rules only control book, and SPY.">
           </div>
           <div class="card__head">
             <h3 class="h-card">Claude day trading agent</h3>
             <span class="badge badge--paper">Paper mode</span>
           </div>
-          <p class="card__body">An experiment: Claude picks trades inside deterministic risk and sizing rules, beside a
-            rules only control book, both benchmarked against SPY.</p>
-          <details class="acc" style="margin-top:16px">
-            <summary><span class="acc__title">View the files</span></summary>
+          <p class="card__body">An experiment. Claude picks trades inside deterministic risk and sizing rules, beside a rules
+            only control book, and both are benchmarked against SPY. The control book is there because of Chick-fil-A:
+            the catering lift I measured had no held out control.</p>
+
+          <details class="acc acc--inner">
+            <summary><span class="acc__title">How it works</span></summary>
             <div class="acc__body">
-              <ul class="tree" aria-label="Repository files">
-                <li><span class="tree__name">CLAUDE.md</span><span class="tree__note">Hard rules for every run</span></li>
-                <li><span class="tree__name">risk_rules.json</span><span class="tree__note">Risk rules</span></li>
-                <li><span class="tree__name tree__name--dir">scripts</span><span class="tree__note">Deterministic Python</span>
-                  <ul><li><span class="tree__name">paper_broker.py</span><span class="tree__note">Paper order handling</span></li></ul>
-                </li>
-                <li><span class="tree__name tree__name--dir">dashboard</span><span class="tree__note">Vercel dashboard</span></li>
+              <ul class="bullets">
+                <li>Claude runs on a schedule through the official Robinhood Agentic Trading MCP.</li>
+                <li>Deterministic Python handles the universe filters, momentum ranking, position sizing, stops, and a fail closed order guard.</li>
+                <li>Two paper books run side by side, <code>claude</code> and a rules only <code>control</code>, each starting with $1,000.</li>
+                <li>Going live requires flipping an execution mode and completing a graduation checklist. Live trading is gated off.</li>
+                <li>A Vercel dashboard shows the books.</li>
               </ul>
             </div>
           </details>
-          <p class="small muted" style="margin-top:12px">Research project. Not investment advice.</p>
+
+          <details class="acc acc--inner">
+            <summary><span class="acc__title">View the files</span></summary>
+            <div class="acc__body">
+              <ul class="tree" aria-label="Trading agent repository files">
+                <li><span class="tree__name">CLAUDE.md</span><span class="tree__note">Hard rules for every run</span></li>
+                <li><span class="tree__name">TRADING_BOT_MASTER_SPEC.md</span><span class="tree__note">Master spec</span></li>
+                <li><span class="tree__name">PHASE_A_TASK.md</span><span class="tree__note">Scheduled run task</span></li>
+                <li><span class="tree__name">PHASE_B_TASK.md</span><span class="tree__note">Scheduled run task</span></li>
+                <li><span class="tree__name">WEEKLY_REVIEW_TASK.md</span><span class="tree__note">Weekly review task</span></li>
+                <li><span class="tree__name">risk_rules.json</span><span class="tree__note">Risk rules</span></li>
+                <li><span class="tree__name">.mcp.json</span><span class="tree__note">MCP wiring</span></li>
+                <li><span class="tree__name tree__name--dir">scripts</span><span class="tree__note">Deterministic Python</span>
+                  <ul>
+                    <li><span class="tree__name">paper_broker.py</span><span class="tree__note">Paper order handling</span></li>
+                    <li><span class="tree__name">position_sizing.py</span><span class="tree__note">Sizing rules</span></li>
+                    <li><span class="tree__name">stop_loss.py</span><span class="tree__note">Stops</span></li>
+                  </ul>
+                </li>
+                <li><span class="tree__name tree__name--dir">paper</span><span class="tree__note">Paper books</span></li>
+                <li><span class="tree__name tree__name--dir">dashboard</span><span class="tree__note">Vercel dashboard</span></li>
+                <li><span class="tree__name tree__name--dir">docs</span><span class="tree__note">ops.md, verified.md, mcp_tools.md</span></li>
+                <li><span class="tree__name tree__name--dir">journal</span><span class="tree__note">Run journal</span></li>
+                <li><span class="tree__name tree__name--dir">tests</span><span class="tree__note">Tests</span></li>
+              </ul>
+              <a class="btn btn--secondary btn--sm" style="margin-top:12px" href="https://github.com/kimballjh11/claude-day-trader-agent">Open the repo on GitHub</a>
+            </div>
+          </details>
+
+          <p class="small muted" style="margin-top:12px">Research project. Not investment advice. The repo README notes that public Claude trading tests have lost money.</p>
+          <ul class="tags"><li>Python</li><li>Claude</li><li>MCP</li><li>Vercel</li></ul>
+        </article>
+
+        <!-- 3 Plash dashboard -->
+        <article class="card card--lift project" id="project-plash">
+          <div class="card__media">
+            <img src="assets/projects/plash-dashboard.jpg" width="1400" height="918" loading="lazy"
+                 alt="Live desktop dashboard over a harbor photo, with tiles for the date and a verse, weather, Gmail, BYU Outlook, calendar, Canvas assignments, a daily checklist, news, and notes.">
+          </div>
+          <div class="card__head">
+            <h3 class="h-card">Plash dashboard</h3>
+            <span class="badge badge--in-use">In use</span>
+          </div>
+          <p class="card__body">A live personal dashboard that runs as my Mac desktop wallpaper, so email, calendar, and
+            assignments are visible without opening an app.</p>
+
+          <details class="acc acc--inner">
+            <summary><span class="acc__title">How it works</span></summary>
+            <div class="acc__body">
+              <ul class="bullets">
+                <li>Plash is a Mac app that shows a website as the desktop wallpaper. This project is that website, served by a local Node.js server.</li>
+                <li>Tiles cover a daily line, weather from the National Weather Service, Gmail and Outlook emails that likely need a reply (with delete, ignore, and draft actions), calendar, Canvas assignments, a daily checklist, notes, and a seasonal ski forecast.</li>
+                <li>It refreshes its own data every 15 minutes and starts at login through launchd.</li>
+                <li>Known limits: Mac only, the Outlook reader scrapes a web page, and the ski forecast is sample data.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="acc acc--inner">
+            <summary><span class="acc__title">View the files</span></summary>
+            <div class="acc__body">
+              <ul class="tree" aria-label="Plash dashboard repository files">
+                <li><span class="tree__name tree__name--dir">public</span><span class="tree__note">Front end</span>
+                  <ul>
+                    <li><span class="tree__name">app.js</span><span class="tree__note">Tiles and refresh loop</span></li>
+                    <li><span class="tree__name">config.js</span><span class="tree__note">Settings</span></li>
+                    <li><span class="tree__name">styles.css</span><span class="tree__note">Layout</span></li>
+                    <li><span class="tree__name">verses.js</span><span class="tree__note">Daily line</span></li>
+                  </ul>
+                </li>
+                <li><span class="tree__name tree__name--dir">server</span><span class="tree__note">Node server, Gmail and Outlook action helpers, Outlook web login</span></li>
+                <li><span class="tree__name">scripts/install-launchd.sh</span><span class="tree__note">Runs it at login</span></li>
+                <li><span class="tree__name">.env.example</span><span class="tree__note">Required settings, no secrets</span></li>
+                <li><span class="tree__name">README.md</span><span class="tree__note">Setup</span></li>
+                <li><span class="tree__name">Life-Dashboard-Build-Plan.md</span><span class="tree__note">Build plan</span></li>
+              </ul>
+              <a class="btn btn--secondary btn--sm" style="margin-top:12px" href="https://github.com/kimballjh11/live-personal-dashboard-wallpaper">Open the repo on GitHub</a>
+            </div>
+          </details>
+
+          <ul class="tags"><li>JavaScript</li><li>Node.js</li><li>Gmail API</li><li>launchd</li></ul>
+        </article>
+
+        <!-- 4 Chick-fil-A heatmap -->
+        <article class="card card--lift project" id="project-heatmap">
+          <div class="card__media">
+            <img src="assets/projects/cfa-heatmap.jpg" width="1600" height="1000" loading="lazy"
+                 alt="Heatmap of catering order density across the western Minneapolis suburbs, with clusters around Maple Grove, Plymouth, and Minneapolis.">
+          </div>
+          <div class="card__head">
+            <h3 class="h-card">Chick-fil-A heatmap analysis</h3>
+            <span class="badge badge--shipped">Shipped</span>
+          </div>
+          <p class="card__body">Maps of where catering demand was, and was not, across the Maple Grove market. We used AI tools
+            to analyze catering, DoorDash, business ordering, and demographic density. I also built the market's official
+            website, <a href="https://chick-fil-amaplegrove.vercel.app">Chick-fil-A Maple Grove</a>.</p>
+
+          <details class="acc acc--inner">
+            <summary><span class="acc__title">How it works</span></summary>
+            <div class="acc__body">
+              <ul class="bullets">
+                <li>Mapped 36 months of mobile orders to delivery ZIP codes to find areas with high individual order density and almost no catering volume.</li>
+                <li>That list drove the outreach. Catering grew 47% in six weeks, about $105K a year annualized.</li>
+                <li>The interactive map plots anonymized ezCater orders by location, by count, and by headcount.</li>
+                <li>Tools: <span class="todo" title="Replace before publishing">{{HEATMAP_TOOLS}}</span>. Data: <span class="todo" title="Replace before publishing">{{HEATMAP_DATA}}</span>.</li>
+                <li>DoorDash and business ordering findings: <span class="todo" title="Replace before publishing">{{HEATMAP_FINDINGS}}</span>. Team: <span class="todo" title="Replace before publishing">{{HEATMAP_TEAM}}</span>.</li>
+              </ul>
+            </div>
+          </details>
+
+          <ul class="tags"><li>Data analysis</li><li>Mapping</li><li>AI tools</li></ul>
           <div class="btn-row card__foot">
-            <a class="btn btn--secondary btn--sm" href="https://github.com/kimballjh11/claude-day-trader-agent">GitHub repo</a>
+            <a class="btn btn--primary btn--sm" href="assets/projects/cfa-heatmap.html">Open the interactive map</a>
+            <a class="btn btn--secondary btn--sm" href="chick-fil-a.html">Case study</a>
           </div>
         </article>
-      </div>
 
-      <div class="callout no-print" style="margin-top:16px">
-        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6.5v.01"/></svg>
-        <p>Phase 5 adds the Plash dashboard, the Chick-fil-A heatmap, the Coach Health Dashboard, and the live Horizon Planner embed.</p>
+        <!-- 5 Coach Health Dashboard -->
+        <article class="card card--lift project" id="project-coach">
+          <div class="card__head">
+            <h3 class="h-card">Coach Health Dashboard</h3>
+            <span class="badge badge--in-use">In use</span>
+          </div>
+          <p class="card__meta">Institute for Citizens &amp; Scholars · Carnegie Young Leaders · through Daybreak Collaborative</p>
+          <p class="card__body">A red, amber, and green health view for a national youth fellowship. Scattered coach reports
+            became one Looker Studio view, so program leaders can see at a glance which coaches and teams need support.</p>
+
+          <details class="acc acc--inner">
+            <summary><span class="acc__title">How it works</span></summary>
+            <div class="acc__body">
+              <ul class="bullets">
+                <li>Coaches submit a short Google Form for each team every reporting window.</li>
+                <li>Scoring logic written natively in Sheets turns each answer set into a red, amber, or green status.</li>
+                <li>A Looker Studio report presents the statuses for program leaders.</li>
+                <li>I built the intake form, wrote the scoring logic, and configured the reporting layer.</li>
+              </ul>
+            </div>
+          </details>
+
+          <ul class="tags"><li>Dashboards</li><li>Looker Studio</li><li>Google Sheets</li><li>Process design</li></ul>
+        </article>
+
+        <!-- 6 Everything else -->
+        <article class="card card--lift project project--more" id="project-more">
+          <h3 class="h-card">View all projects on GitHub</h3>
+          <p class="card__body">Smaller builds, class study sites, and experiments.</p>
+          <ul class="repo-list">
+            <li><a href="https://github.com/kimballjh11/congressional-trading-tracker">congressional-trading-tracker</a><span>Congressional stock trades with suspicion scoring</span></li>
+            <li><a href="https://github.com/kimballjh11/strat402-study">strat402-study</a><span>STRAT 402 interactive study site</span></li>
+            <li><a href="https://github.com/kimballjh11/poli357-midterm">poli357-midterm</a><span>POLI 357 interactive study site</span></li>
+          </ul>
+          <div class="btn-row card__foot">
+            <a class="btn btn--primary btn--sm" href="https://github.com/kimballjh11">github.com/kimballjh11</a>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -568,27 +862,33 @@
       <div class="card">
         <div class="contact-row">
           <span class="eyebrow">BYU email</span>
-          <span class="contact-row__value" id="c-byu"><noscript>kjh11 at byu dot edu</noscript></span>
-          <span class="btn-row">
-            <button class="btn btn--secondary btn--sm" type="button" data-reveal="mail" data-r="ude.uyb@11hjk" aria-controls="c-byu" hidden>Show email</button>
-            <button class="btn btn--secondary btn--sm" type="button" data-copy-for="c-byu" data-copy-status="copy-status" hidden>Copy</button>
-          </span>
+          <div class="contact-row__body">
+            <span class="contact-row__value" id="c-byu"><noscript>kjh11 at byu dot edu</noscript></span>
+            <span class="btn-row">
+              <button class="btn btn--secondary btn--sm" type="button" data-reveal="mail" data-r="ude.uyb@11hjk" aria-controls="c-byu" hidden>Show email</button>
+              <button class="btn btn--secondary btn--sm" type="button" data-copy-for="c-byu" data-copy-status="copy-status" hidden>Copy</button>
+            </span>
+          </div>
         </div>
         <div class="contact-row">
           <span class="eyebrow">Personal email</span>
-          <span class="contact-row__value" id="c-personal"><noscript>kimballjh11 at gmail dot com</noscript></span>
-          <span class="btn-row">
-            <button class="btn btn--secondary btn--sm" type="button" data-reveal="mail" data-r="moc.liamg@11hjllabmik" aria-controls="c-personal" hidden>Show email</button>
-            <button class="btn btn--secondary btn--sm" type="button" data-copy-for="c-personal" data-copy-status="copy-status" hidden>Copy</button>
-          </span>
+          <div class="contact-row__body">
+            <span class="contact-row__value" id="c-personal"><noscript>kimballjh11 at gmail dot com</noscript></span>
+            <span class="btn-row">
+              <button class="btn btn--secondary btn--sm" type="button" data-reveal="mail" data-r="moc.liamg@11hjllabmik" aria-controls="c-personal" hidden>Show email</button>
+              <button class="btn btn--secondary btn--sm" type="button" data-copy-for="c-personal" data-copy-status="copy-status" hidden>Copy</button>
+            </span>
+          </div>
         </div>
         <div class="contact-row">
           <span class="eyebrow">Phone</span>
-          <span class="contact-row__value" id="c-phone"><noscript>On my resume</noscript></span>
-          <span class="btn-row">
-            <button class="btn btn--secondary btn--sm" type="button" data-reveal="tel" data-r="3897-256-108" aria-controls="c-phone" hidden>Show phone</button>
-            <button class="btn btn--secondary btn--sm" type="button" data-copy-for="c-phone" data-copy-status="copy-status" hidden>Copy</button>
-          </span>
+          <div class="contact-row__body">
+            <span class="contact-row__value" id="c-phone"><noscript>On my resume</noscript></span>
+            <span class="btn-row">
+              <button class="btn btn--secondary btn--sm" type="button" data-reveal="tel" data-r="3897-256-108" aria-controls="c-phone" hidden>Show phone</button>
+              <button class="btn btn--secondary btn--sm" type="button" data-copy-for="c-phone" data-copy-status="copy-status" hidden>Copy</button>
+            </span>
+          </div>
         </div>
         <div class="contact-row">
           <span class="eyebrow">LinkedIn</span>
@@ -641,7 +941,7 @@
 }
 </script>
 
-<script src="main.js?v=7"></script>
-<script src="map.js?v=7"></script>
+<script src="main.js?v=10"></script>
+<script src="map.js?v=10"></script>
 </body>
 </html>

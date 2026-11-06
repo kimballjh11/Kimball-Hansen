@@ -208,7 +208,7 @@ a:hover { text-decoration-thickness: 2px; }
   padding-inline: var(--gutter);
 }
 
-.grid { display: grid; gap: 16px; }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
 @media (min-width: 768px) {
   .grid { gap: 20px; }
   .grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -689,8 +689,10 @@ body.has-tabbar { padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bot
 }
 .contact-row + .contact-row { border-top: 1px solid var(--line); }
 @media (min-width: 640px) {
-  .contact-row { grid-template-columns: 9rem minmax(0, 1fr) auto; }
+  .contact-row { grid-template-columns: 9rem minmax(0, 1fr); }
 }
+.contact-row__body { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 0; min-width: 0; }
+.contact-row__value:has(a) { margin-right: 16px; }
 .contact-row__value { font-weight: 500; overflow-wrap: anywhere; }
 .contact-row__value a { color: var(--ink); }
 
@@ -988,3 +990,92 @@ body.has-tabbar { padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bot
 .map-side-list li { font-size: 0.9375rem; padding-block: 5px; }
 .map-side-list li + li { border-top: 1px solid var(--line); }
 .legend--stack { flex-direction: column; gap: 10px; margin-top: 12px; font-size: 0.875rem; }
+
+/* 25 ─── Education ─────────────────────────────────────────────────────── */
+
+.course-list { margin-top: 10px; }
+.course-list li {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  column-gap: 10px;
+  align-items: baseline;
+  padding-block: 7px;
+  font-size: 0.9375rem;
+}
+.course-list li + li { border-top: 1px solid var(--line); }
+.course__code { font-family: var(--mono); font-size: 0.75rem; color: var(--ink-muted); white-space: nowrap; }
+.course__tag {
+  grid-column: 2;
+  justify-self: start;
+  margin-top: 4px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--blue) 40%, transparent);
+  color: var(--blue-ink);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.course-list li.is-key { font-weight: 600; }
+.course-list li.is-key .course__code::before {
+  content: "★ ";
+  color: var(--accent);
+}
+@media (min-width: 768px) {
+  .course-list--cols { columns: 2; column-gap: 32px; }
+  .course-list--cols li { break-inside: avoid; }
+  .course-list--cols li + li { border-top: 0; }
+}
+
+/* Inline PDF viewer: desktop only. Phones get the buttons above. */
+.pdf-panel { display: none; }
+@media (min-width: 768px) { .pdf-panel { display: block; } }
+.embed--pdf .embed__frame { height: 640px; }
+
+/* 26 ─── Side projects ─────────────────────────────────────────────────── */
+
+.project--wide { grid-column: 1 / -1; }
+.project__wide { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+@media (min-width: 1024px) {
+  .project__wide { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 28px; align-items: start; }
+}
+
+.embed {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  overflow: hidden;
+}
+.embed__placeholder {
+  display: grid;
+  justify-items: start;
+  align-content: center;
+  gap: 10px;
+  min-height: 240px;
+  padding: 24px;
+}
+@media (min-width: 1024px) { .embed__placeholder { min-height: 420px; } }
+.embed__frame { display: block; width: 100%; height: 680px; border: 0; background: #fff; }
+
+.acc--inner { margin-top: 12px; box-shadow: none; }
+.acc--inner + .acc--inner { margin-top: 8px; }
+.acc--inner[open] { box-shadow: none; border-color: var(--line-strong); }
+.acc--inner > summary { padding: 12px 16px; }
+.acc--inner .acc__body { padding: 0 16px 16px; }
+.acc--inner .acc__title { font-size: 0.9375rem; }
+
+.project code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--surface-2);
+}
+
+.repo-list { margin-top: 14px; }
+.repo-list li { display: grid; gap: 2px; padding-block: 10px; }
+.repo-list li + li { border-top: 1px solid var(--line); }
+.repo-list a { font-family: var(--mono); font-size: 0.875rem; font-weight: 600; overflow-wrap: anywhere; }
+.repo-list span { font-size: 0.875rem; color: var(--ink-muted); }

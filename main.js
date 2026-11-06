@@ -1,13 +1,12 @@
 /* Kimball Hansen, site behaviour.
    Everything on the site works with this file absent: the tab bar is a set
    of in page anchor links, every panel shows stacked, accordions are native
-   <details>, and filter chips stay hidden. This script only enhances.
-   Helpers: tabs · accordions · filter chips · reveal · copy · print. */
+   <details>, and filter chips stay hidden. The "js" class is set inline in <head>.
+   Helpers: tabs · accordions · filter chips · reveal · copy · embeds · print. */
 
 (function () {
   "use strict";
 
-  var root = document.documentElement;
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   /* ── Tabs (WAI-ARIA tabs pattern with hash routing) ───────────────── */
@@ -103,18 +102,21 @@
     window.addEventListener("popstate", function () { select(indexFor(location.hash)); });
     window.addEventListener("hashchange", function () {
       var i = indexFor(location.hash);
-      // In page links such as "Get in touch" land here.
       if (i !== -1) select(i, { scroll: "always", focusHeading: true });
     });
 
     var start = indexFor(location.hash);
     select(start);
-    // A link straight to a panel opens the page at the top, with the
-    // identity block in view. A link to something inside a panel scrolls to it.
+    // A link to a panel opens at the top; a link inside one scrolls to it. Re-run
+    // at load (the browser's own hash jump can land late) unless the reader scrolled.
     var target = start !== -1 && document.getElementById(location.hash.slice(1));
     var toTop = !target || target === panels[start];
+    var moved = false;
+    ["wheel", "touchstart", "keydown"].forEach(function (ev) {
+      window.addEventListener(ev, function () { moved = true; }, { once: true, passive: true });
+    });
     function settle() {
-      if (toTop) window.scrollTo(0, 0); else target.scrollIntoView();
+      if (!moved) { if (toTop) window.scrollTo(0, 0); else target.scrollIntoView(); }
     }
     settle();
     window.addEventListener("load", settle, { once: true });
@@ -206,13 +208,36 @@
     });
   }
 
+  /* ── Click to load embeds (live tool iframe, inline PDF) ──────────── */
+  /* Nothing loads until asked; without JS the plain links stay. */
+
+  function initEmbeds() {
+    document.querySelectorAll("[data-embed]").forEach(function (btn) {
+      btn.hidden = false;
+      btn.addEventListener("click", function () {
+        var slot = document.getElementById(btn.getAttribute("aria-controls"));
+        var pdf = btn.getAttribute("data-embed") === "pdf";
+        var el = document.createElement(pdf ? "object" : "iframe");
+        if (pdf) { el.type = "application/pdf"; el.data = btn.getAttribute("data-src"); }
+        else {
+          el.src = btn.getAttribute("data-src");
+          el.setAttribute("sandbox", "allow-scripts allow-forms allow-same-origin allow-popups allow-downloads");
+          el.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+        }
+        el.title = btn.getAttribute("data-title");
+        el.className = "embed__frame";
+        slot.textContent = "";
+        slot.appendChild(el); el.focus();
+      });
+    });
+  }
+
   /* ── Print: open every accordion so nothing is cut off ────────────── */
 
   function initPrint() {
     var closed = [];
     window.addEventListener("beforeprint", function () {
-      closed = Array.prototype.filter.call(document.querySelectorAll("details"),
-        function (d) { return !d.open; });
+      closed = Array.prototype.filter.call(document.querySelectorAll("details"), function (d) { return !d.open; });
       closed.forEach(function (d) { d.open = true; });
     });
     window.addEventListener("afterprint", function () {
@@ -220,11 +245,5 @@
     });
   }
 
-  root.classList.add("js");
-  initTabs();
-  initAccordions();
-  initFilters();
-  initReveal();
-  initCopy();
-  initPrint();
+  [initTabs, initAccordions, initFilters, initReveal, initCopy, initEmbeds, initPrint].forEach(function (f) { f(); });
 })();
