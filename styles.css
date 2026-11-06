@@ -947,3 +947,18 @@ body.has-tabbar { padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bot
   font-weight: 700;
   line-height: 1.6;
 }
+
+/* 24 ─── Work experience ───────────────────────────────────────────────── */
+
+.exp-tools { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 8px 16px; margin-bottom: 8px; }
+.exp-tools .chips { margin-bottom: 12px; }
+
+.acc--static .acc__summary { display: grid; gap: 4px; padding: 18px 20px; }
+
+.early-list li { display: grid; gap: 2px; padding-block: 10px; }
+.early-list li + li { border-top: 1px solid var(--line); }
+.early-list li:first-child { padding-top: 0; }
+.early-list strong { font-weight: 600; }
+.early-list span { font-size: 0.875rem; color: var(--ink-muted); }
+
+[data-filter-section][hidden] { display: none; }

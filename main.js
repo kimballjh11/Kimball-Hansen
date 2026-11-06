@@ -159,6 +159,10 @@
           item.hidden = !match;
           if (match) shown++;
         });
+        // Hide a group heading when the filter leaves its group empty.
+        target.querySelectorAll("[data-filter-section]").forEach(function (sec) {
+          sec.hidden = !sec.querySelector("[data-filter-item]:not([hidden])");
+        });
         if (status) status.textContent = "Showing " + shown + " of " + items.length;
       });
     });

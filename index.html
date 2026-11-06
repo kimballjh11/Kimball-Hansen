@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 
 <body class="has-tabbar">
@@ -267,54 +267,232 @@
       <header class="panel__head">
         <p class="eyebrow"><span class="num">02</span> / Work experience</p>
         <h2 class="h-panel" id="experience-heading" data-panel-heading tabindex="-1">Work experience</h2>
-        <p class="lead">Newest first. Open a role to see what I did.</p>
+        <p class="lead">Current roles first. Open a role to see what I did.</p>
       </header>
 
-      <div class="chips" data-needs-js data-filter-group="exp-list" data-filter-status="exp-status" role="group" aria-label="Filter roles">
-        <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
-        <button class="chip" type="button" data-filter="strategy" aria-pressed="false">Strategy</button>
-        <button class="chip" type="button" data-filter="software" aria-pressed="false">Software</button>
-        <button class="chip" type="button" data-filter="research" aria-pressed="false">Research</button>
-        <button class="chip" type="button" data-filter="civic" aria-pressed="false">Civic</button>
+      <div class="exp-tools">
+        <div class="chips" data-needs-js data-filter-group="exp-list" data-filter-status="exp-status" role="group" aria-label="Filter roles">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip" type="button" data-filter="strategy" aria-pressed="false">Strategy</button>
+          <button class="chip" type="button" data-filter="software" aria-pressed="false">Software</button>
+          <button class="chip" type="button" data-filter="research" aria-pressed="false">Research</button>
+          <button class="chip" type="button" data-filter="civic" aria-pressed="false">Civic</button>
+        </div>
+        <button class="btn btn--secondary btn--sm" type="button" data-acc-toggle="exp-list" aria-expanded="false" hidden>Expand all</button>
       </div>
       <p class="visually-hidden" id="exp-status" aria-live="polite"></p>
 
       <div id="exp-list">
-        <details class="acc" data-filter-item data-tags="strategy software">
-          <summary>
-            <span class="acc__title">AI Recruiting Fellow, Marriott School Strategy Department</span>
-            <span class="acc__meta">Oct 2026 to Present</span>
-            <span class="acc__result">A weekly job postings dashboard for the whole strategy program.</span>
-          </summary>
-          <div class="acc__body">
-            <ul class="bullets">
-              <li>Build and update weekly a job postings dashboard covering Summer 2027 internships, Spring 2027, and full time roles for 2027 to 2028.</li>
-              <li>Postings are scored 1 to 5 for strategy fit across seven weighted factors, with a Read Me tab documenting the rubric, sourcing rules, and weekly checklist.</li>
-            </ul>
-            <ul class="tags"><li>Strategy</li><li>Software</li></ul>
-          </div>
-        </details>
 
-        <details class="acc" data-filter-item data-tags="strategy software">
-          <summary>
-            <span class="acc__title">Strategic Growth Intern, Chick-fil-A</span>
-            <span class="acc__meta">Maple Grove market, Minneapolis area · May 2026 to Aug 2026</span>
-            <span class="acc__result">Grew catering revenue 47% in six weeks.</span>
-          </summary>
-          <div class="acc__body">
-            <ul class="bullets">
-              <li>Grew catering revenue 47% (about $105K a year) in six weeks by mapping 36 months of mobile orders to target ZIP codes.</li>
-              <li>Designed a reusable metal table marker rolled out in multiple markets, cutting about $500K a year in national sticker costs.</li>
-            </ul>
-            <ul class="tags"><li>Strategy</li><li>Software</li></ul>
-            <p class="card__foot"><a href="chick-fil-a.html">Read the case study</a></p>
-          </div>
-        </details>
-      </div>
+        <!-- Experience -->
+        <div data-filter-section>
+          <h3 class="h-group" style="margin-top:0">Experience</h3>
 
-      <div class="callout no-print" style="margin-top:16px">
-        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6.5v.01"/></svg>
-        <p>Phase 3 adds every role, the civic and service group, and early leadership.</p>
+          <details class="acc" data-filter-item data-tags="strategy software">
+            <summary>
+              <span class="acc__title">AI Recruiting Fellow, Marriott School Strategy Department</span>
+              <span class="acc__meta">BYU · Oct 2026 to Present</span>
+              <span class="acc__result">A weekly job postings dashboard for the whole strategy program.</span>
+            </summary>
+            <div class="acc__body">
+              <ul class="bullets">
+                <li>Build and update weekly a job postings dashboard for the strategy program, covering Summer 2027 internships, Spring 2027, and full time roles for 2027 to 2028.</li>
+                <li>Score postings 1 to 5 for strategy fit across seven weighted factors: function, employer, coursework, attainability, career, pay, and location. A Read Me tab documents the rubric, sourcing rules, and weekly checklist.</li>
+                <li>Links come only from company career sites, LinkedIn, Handshake, or Workday. Any detail not on the posting is labeled Unverified.</li>
+                <li>Use AI tools to source and structure postings.</li>
+              </ul>
+              <ul class="tags"><li>Strategy</li><li>Software</li></ul>
+            </div>
+          </details>
+
+          <details class="acc" data-filter-item data-tags="research">
+            <summary>
+              <span class="acc__title">Researcher, SAIL Lab</span>
+              <span class="acc__meta">BYU Social Science and AI Lab · Oct 2026 to Present</span>
+              <span class="acc__result">Working on a paper about AI and political polarization.</span>
+            </summary>
+            <div class="acc__body">
+              <ul class="bullets">
+                <li>Working on publishing a paper on how AI can help curb polarization in democracies.</li>
+              </ul>
+              <ul class="tags"><li>Research</li></ul>
+            </div>
+          </details>
+
+          <details class="acc" data-filter-item data-tags="strategy software">
+            <summary>
+              <span class="acc__title">Independent Strategy Consultant</span>
+              <span class="acc__meta">Remote · Nov 2025 to Present</span>
+              <span class="acc__result">Grew a Mexican e-commerce firm from about $3K to $10K in monthly revenue.</span>
+            </summary>
+            <div class="acc__body">
+              <ul class="bullets">
+                <li>Grew a Mexican e-commerce firm from about $3K to $10K in monthly revenue through China sourcing and US market entry.</li>
+                <li>Scoped youth programming for a nonprofit's surplus warehouse in Honduras. The recommendation was implemented on site.</li>
+                <li>Built Horizon Planner, a career diagnostic and roadmap tool for Daybreak Collaborative, a social impact consulting firm. It had 100+ users in its launch month and has been downloaded several thousand times.</li>
+                <li>Built the Coach Health Dashboard for the Institute for Citizens &amp; Scholars' Carnegie Young Leaders program, through Daybreak, so program leaders can see at a glance which coaches and teams need support.</li>
+              </ul>
+              <ul class="tags"><li>Strategy</li><li>Software</li></ul>
+              <p class="card__foot"><a href="horizon-planner.html">Read the Horizon Planner case study</a></p>
+            </div>
+          </details>
+
+          <details class="acc" data-filter-item data-tags="strategy software">
+            <summary>
+              <span class="acc__title">Strategic Growth Intern, Chick-fil-A</span>
+              <span class="acc__meta">Maple Grove market, Minneapolis area · May 2026 to Aug 2026</span>
+              <span class="acc__result">Grew catering revenue 47% in six weeks.</span>
+            </summary>
+            <div class="acc__body">
+              <ul class="bullets">
+                <li>Grew catering revenue 47% (about $105K a year) in six weeks by mapping 36 months of mobile orders to target ZIP codes.</li>
+                <li>Designed a reusable metal table marker rolled out in multiple markets, cutting about $500K a year in national sticker costs.</li>
+                <li>Built and handed off a hybrid operations app for FAQs, donations, market news, and a staff portal. It is still in use.</li>
+                <li>Drove about $60K in annualized incremental app revenue with a market specific personalized reward program.</li>
+              </ul>
+              <ul class="tags"><li>Strategy</li><li>Software</li></ul>
+              <p class="card__foot"><a href="chick-fil-a.html">Read the case study</a></p>
+            </div>
+          </details>
+
+          <details class="acc" data-filter-item data-tags="research software">
+            <summary>
+              <span class="acc__title">Research Assistant, BYU Marriott School</span>
+              <span class="acc__meta">Provo, Utah · Dec 2025 to Aug 2026</span>
+              <span class="acc__result">Revamped the strategy department's official platform.</span>
+            </summary>
+            <div class="acc__body">
+              <ul class="bullets">
+                <li>Revamped the official BYU strategy department platform for program connectivity and alumni networking, supporting Professor Murff.</li>
+              </ul>
+              <ul class="tags"><li>Research</li><li>Software</li></ul>
+            </div>
+          </details>
+
+          <details class="acc" data-filter-item data-tags="operations">
+            <summary>
+              <span class="acc__title">Inventory Management Specialist, Advanced Records Management</span>
+              <span class="acc__meta">Plymouth, Minnesota · Jun 2025 to Sep 2025</span>
+              <span class="acc__result">Logistics workflows for time sensitive delivery of legal documents.</span>
+            </summary>
+            <div class="acc__body">
+              <ul class="bullets">
+                <li>Built logistics workflows across multiple facilities for time sensitive delivery of legal documents.</li>
+                <li>Coordinated scheduling and inventory audits that kept chain of custody records 100% accurate.</li>
+              </ul>
+              <ul class="tags"><li>Operations</li></ul>
+            </div>
+          </details>
+
+          <details class="acc" data-filter-item data-tags="strategy">
+            <summary>
+              <span class="acc__title">Founder, Kimball Hansen, LLC</span>
+              <span class="acc__meta">Minneapolis, Minnesota · May 2016 to Aug 2023</span>
+              <span class="acc__result">A lawn and landscape business, started at age 12, with $200K+ in lifetime revenue.</span>
+            </summary>
+            <div class="acc__body">
+              <ul class="bullets">
+                <li>Founded a lawn and landscape business at age 12, scaling to $200K+ in lifetime revenue and $50K in the final year.</li>
+                <li>Negotiated and managed service contracts for 50+ high net worth clients with a 90% retention rate.</li>
+                <li>Built a winter estate maintenance line for snowbird clients, turning a seasonal business into a year round one.</li>
+              </ul>
+              <ul class="tags"><li>Strategy</li><li>Operations</li></ul>
+              <p class="card__foot"><a href="lawn-care.html">Read the case study</a></p>
+            </div>
+          </details>
+        </div>
+
+        <!-- Civic and service -->
+        <div data-filter-section>
+          <h3 class="h-group">Civic and service</h3>
+
+          <details class="acc" data-filter-item data-tags="civic">
+            <summary>
+              <span class="acc__title">Board Member, &amp;You</span>
+              <span class="acc__meta">Nonpartisan youth civic engagement · Aug 2026 to Present</span>
+              <span class="acc__result">Co-designed six civic activations.</span>
+            </summary>
+            <div class="acc__body">
+              <ul class="bullets">
+                <li>Co-designed six civic activations for a nonpartisan youth initiative now targeting 15M participant actions in 2027.</li>
+              </ul>
+              <ul class="tags"><li>Civic</li></ul>
+            </div>
+          </details>
+
+          <details class="acc" data-filter-item data-tags="civic">
+            <summary>
+              <span class="acc__title">Volunteer Orchestrator and Co-leader, International Humanitarian Projects</span>
+              <span class="acc__meta">Ghana and Honduras · 2019, 2022, 2026</span>
+              <span class="acc__result">Led construction of the only school within a 75 mile radius in rural Ghana.</span>
+            </summary>
+            <div class="acc__body">
+              <ul class="bullets">
+                <li>Directed, fundraised, and led nonprofit construction of the only school within a 75 mile radius in rural Ghana.</li>
+                <li>Ran supply chain logistics delivering 200+ school supply kits to students in Tegucigalpa, Honduras.</li>
+                <li>Coordinated cross continent transport of high value supplies with airlines and foreign embassies.</li>
+              </ul>
+              <ul class="tags"><li>Civic</li><li>Operations</li></ul>
+            </div>
+          </details>
+
+          <details class="acc" data-filter-item data-tags="civic">
+            <summary>
+              <span class="acc__title">Volunteer Surgical Technician, Central American Eye Clinics</span>
+              <span class="acc__meta">Tegucigalpa, Honduras · 2019 to Present, annual trips</span>
+              <span class="acc__result">Surgical technician in ophthalmology clinics.</span>
+            </summary>
+            <div class="acc__body">
+              <ul class="bullets">
+                <li>Assisted as a surgical technician in ophthalmology clinics in Tegucigalpa with CAEC and CAMO.</li>
+              </ul>
+              <ul class="tags"><li>Civic</li></ul>
+            </div>
+          </details>
+
+          <details class="acc" data-filter-item data-tags="civic">
+            <summary>
+              <span class="acc__title">Full Time Volunteer Representative, The Church of Jesus Christ of Latter-day Saints</span>
+              <span class="acc__meta">San Francisco and Oakland, California · Aug 2023 to Jul 2025</span>
+              <span class="acc__result">Worked with thousands of immigrants from Latin America.</span>
+            </summary>
+            <div class="acc__body">
+              <ul class="bullets">
+                <li>Served as a religious leader in the Bay Area, working with thousands of immigrants from Latin American countries.</li>
+                <li>Trained 7 new representatives to work and teach across the Bay Area.</li>
+                <li>Taught people from 70+ countries. Became fluent in Spanish and conversant in Mam and Samoan.</li>
+              </ul>
+              <ul class="tags"><li>Civic</li></ul>
+            </div>
+          </details>
+
+          <div class="acc acc--static" data-filter-item data-tags="civic">
+            <div class="acc__summary">
+              <span class="acc__title">Member, International Development Club</span>
+              <span class="acc__meta">BYU · Aug 2025 to Present</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Early leadership -->
+        <div data-filter-section>
+          <h3 class="h-group">Early leadership</h3>
+          <details class="acc" data-filter-item data-tags="civic">
+            <summary>
+              <span class="acc__title">High school and scouting</span>
+              <span class="acc__meta">2016 to 2022</span>
+            </summary>
+            <div class="acc__body">
+              <ul class="early-list">
+                <li><strong>Eagle Scout</strong><span>2016 to 2019</span></li>
+                <li><strong>Student Government Senator, Orono High School</strong><span>2020 to 2022</span></li>
+                <li><strong>Mentor, SPARKS Mentoring</strong><span>Tutoring for underprivileged students · 2021 to 2022</span></li>
+                <li><strong>President and Co-founder, Ping Pong Club</strong><span>2021 to 2022</span></li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
       </div>
     </div>
   </section>
@@ -508,7 +686,7 @@
 }
 </script>
 
-<script src="main.js?v=4"></script>
-<script src="map.js?v=4"></script>
+<script src="main.js?v=5"></script>
+<script src="map.js?v=5"></script>
 </body>
 </html>
