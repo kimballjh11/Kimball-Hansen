@@ -2,8 +2,8 @@
    Without this file the map still renders, each state keeps its native
    <title> tooltip, and the lists under the map carry the same information.
    With it: hover, tap, or focus a state for its name and status; arrow keys
-   move between states (one tab stop for the whole map); markers open a card
-   whose text comes from the matching item in the "Places I have lived" list. */
+   move between states (one tab stop for the whole map); markers show the
+   place name from the matching item in the "Places I have lived" list. */
 
 (function () {
   "use strict";
@@ -77,9 +77,12 @@
     return "<strong>" + s.getAttribute("data-name") + "</strong>" + s.getAttribute("data-status");
   }
 
+  // Markers show the place name only.
   function cardHtml(m) {
     var item = document.getElementById(m.getAttribute("data-card"));
-    return item ? item.innerHTML : m.getAttribute("aria-label");
+    var name = item && item.querySelector("strong");
+    return "<strong>" + (name ? name.textContent : m.getAttribute("aria-label")) + "</strong>" +
+      (m.classList.contains("usmap__marker--home") ? "Hometown" : "Lived here");
   }
 
   /* States: pointer (mouse and touch) */

@@ -33,7 +33,7 @@ const PLACES = [
   { id: "place-durham",    label: "Durham, North Carolina",            lat: 35.9940, lon: -78.8986 },
   { id: "place-bay",       label: "San Francisco and Oakland, California", lat: 37.7897, lon: -122.3442 },
 ];
-const HOME = { id: "place-minneapolis", label: "Minneapolis, Minnesota, my hometown", lat: 44.9778, lon: -93.2650 };
+const HOME = { id: "place-orono", label: "Orono, Minnesota, my hometown", lat: 44.9711, lon: -93.6044 };
 
 const FIPS = {
   "01":"AL","02":"AK","04":"AZ","05":"AR","06":"CA","08":"CO","09":"CT","10":"DE","12":"FL","13":"GA",
