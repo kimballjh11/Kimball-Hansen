@@ -1035,34 +1035,42 @@ body.has-tabbar { padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bot
 
 /* 26 ─── Side projects ─────────────────────────────────────────────────── */
 
-/* Each card: summary, outcome, GitHub button pinned to the bottom so the
+/* Each card: summary and a GitHub button pinned to the bottom so the
    buttons line up across a row. */
 .project { display: flex; flex-direction: column; }
 .project > .card__foot { margin-top: auto; padding-top: 20px; }
-.project--wide { grid-column: 1 / -1; }
-.project__wide { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
-.project__text { align-self: start; }
-.project__text > .card__foot { margin-top: 20px; }
+
+/* Horizon Planner: the live tool sits where the other cards have a
+   screenshot, and grows to the iframe's height once loaded. */
+.project .embed.card__media { border: 0; border-bottom: 1px solid var(--line); border-radius: var(--radius) var(--radius) 0 0; }
+.project .embed__placeholder { min-height: 0; height: 100%; padding: 20px; }
+.project .card__media:has(.embed__frame) { aspect-ratio: auto; }
+
+/* The top three (Horizon Planner, trading agent, Plash) each take a full
+   row, stacked. Below them the last three share a row on desktop. */
+.projects > .project--feature { grid-column: 1 / -1; }
 @media (min-width: 1024px) {
-  .project__wide { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 28px; }
-}
-.project__outcome {
-  margin-top: 14px;
-  padding: 12px 14px;
-  border-left: 3px solid var(--blue);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  background: var(--surface-2);
-  color: var(--ink);
-  font-size: 0.9375rem;
-}
-.project__outcome span {
-  display: block;
-  margin-bottom: 2px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--blue-ink);
+  .projects { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .projects > .project--third { grid-column: span 1; }
+
+  /* Feature cards: media on the left, text on the right. */
+  .project--feature {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    grid-template-rows: auto auto 1fr;
+    column-gap: 32px;
+  }
+  .project--feature > * { grid-column: 2; }
+  .project--feature > .card__media {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    margin: -24px 0 -24px -24px;
+    border-bottom: 0;
+    border-right: 1px solid var(--line);
+    border-radius: var(--radius) 0 0 var(--radius);
+  }
+  .project--feature > .card__head { padding-top: 8px; }
+  .project--feature .embed.card__media { border-bottom: 0; border-right: 1px solid var(--line); border-radius: var(--radius) 0 0 var(--radius); }
 }
 
 /* Click to load embed (the transcript preview on the Education tab). */

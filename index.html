@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="styles.css?v=13">
+<link rel="stylesheet" href="styles.css?v=15">
 </head>
 
 <body class="has-tabbar">
@@ -481,10 +481,6 @@
         <div class="card">
           <h3 class="h-card">Transcript</h3>
           <p class="card__body">Official BYU transcript. My student ID, birth date, and AP exam scores are redacted.</p>
-          <div class="btn-row card__foot">
-            <a class="btn btn--primary" href="assets/transcript.pdf" target="_blank" rel="noopener">View transcript</a>
-            <a class="btn btn--secondary" href="assets/transcript.pdf" download="Kimball-Hansen-BYU-transcript.pdf">Download PDF</a>
-          </div>
           <h3 class="h-card" style="margin-top:24px">Case competitions</h3>
           <ul class="bullets" style="margin-top:10px">
             <li>Bain &amp; Company, finalist</li>
@@ -526,97 +522,83 @@
 
       <div class="grid grid--2 projects">
 
-        <article class="card project project--wide" id="project-horizon">
-          <div class="project__wide">
-            <div class="project__text">
-              <div class="card__head">
-                <h3 class="h-card">Horizon Planner</h3>
-                <span class="badge badge--shipped">Shipped</span>
-              </div>
-              <p class="card__body">A career diagnostic for Daybreak Collaborative. A short intake becomes a personalized
-                roadmap for people working in social impact, built with Next.js and the Claude API.</p>
-              <p class="project__outcome"><span>Outcome</span>100+ users in its launch month, and downloaded several thousand times.</p>
-              <div class="btn-row card__foot">
-                <a class="btn btn--primary btn--sm" href="https://github.com/kimballjh11/Social.Impact.Career.Trajectory">View in GitHub</a>
-                <a class="btn btn--secondary btn--sm" href="https://www.daybreak-collaborative.com/horizon-planner/">Open the live tool</a>
-              </div>
+        <article class="card project project--feature" id="project-horizon">
+          <div class="card__media embed" id="hp-slot">
+            <div class="embed__placeholder">
+              <p class="h-card">Try the live tool here</p>
+              <p class="muted small">Each submission runs Claude and sends an email, so the tool loads only when you ask.</p>
+              <button class="btn btn--primary btn--sm" type="button" data-embed="iframe"
+                      data-src="https://www.daybreak-collaborative.com/horizon-planner/"
+                      data-title="Horizon Planner, live tool" aria-controls="hp-slot" hidden>Load the live tool</button>
             </div>
-
-            <div class="embed" id="hp-slot">
-              <div class="embed__placeholder">
-                <p class="h-card">Try the live tool here</p>
-                <p class="muted small">Each submission runs Claude and sends an email, so the tool loads only when you ask.</p>
-                <button class="btn btn--primary btn--sm" type="button" data-embed="iframe"
-                        data-src="https://www.daybreak-collaborative.com/horizon-planner/"
-                        data-title="Horizon Planner, live tool" aria-controls="hp-slot" hidden>Load the live tool</button>
-                <a class="small" href="https://www.daybreak-collaborative.com/horizon-planner/">Or open the real one at daybreak-collaborative.com</a>
-              </div>
-            </div>
+          </div>
+          <div class="card__head">
+            <h3 class="h-card">Horizon Planner</h3>
+          </div>
+          <p class="card__body">A career diagnostic for Daybreak Collaborative. A short intake becomes a personalized
+            roadmap for people working in social impact, built with Next.js and the Claude API. It had 100+ users in its
+            launch month and has been downloaded several thousand times.</p>
+          <div class="btn-row card__foot">
+            <a class="btn btn--primary btn--sm" href="https://github.com/kimballjh11/Social.Impact.Career.Trajectory">View in GitHub</a>
+            <a class="btn btn--secondary btn--sm" href="https://www.daybreak-collaborative.com/horizon-planner/">Open the live tool</a>
           </div>
         </article>
 
-        <article class="card project" id="project-trader">
+        <article class="card project project--feature" id="project-trader">
           <div class="card__media">
             <img src="assets/projects/trader-dashboard.jpg" width="1170" height="825" loading="lazy"
                  alt="Trading agent dashboard labeled as an illustrative October simulation, with equity lines for the Claude book, the rules only control book, and SPY.">
           </div>
           <div class="card__head">
             <h3 class="h-card">Claude day trading agent</h3>
-            <span class="badge badge--paper">Paper mode</span>
           </div>
           <p class="card__body">Claude picks trades inside deterministic risk and sizing rules, beside a rules only control
-            book, and both are benchmarked against SPY.</p>
-          <p class="project__outcome"><span>Outcome</span>Running in paper mode. Live trading stays off until it passes a graduation checklist. Research project, not investment advice.</p>
+            book, and both are benchmarked against SPY. A research project in paper mode, not investment advice.</p>
           <div class="btn-row card__foot">
             <a class="btn btn--primary btn--sm" href="https://github.com/kimballjh11/claude-day-trader-agent">View in GitHub</a>
           </div>
         </article>
 
-        <article class="card project" id="project-plash">
+        <article class="card project project--feature" id="project-plash">
           <div class="card__media">
             <img src="assets/projects/plash-dashboard.jpg" width="1400" height="918" loading="lazy"
                  alt="Live desktop dashboard over a harbor photo, with tiles for the date and a verse, weather, Gmail, BYU Outlook, calendar, Canvas assignments, a daily checklist, news, and notes.">
           </div>
           <div class="card__head">
             <h3 class="h-card">Plash dashboard</h3>
-            <span class="badge badge--in-use">In use</span>
           </div>
           <p class="card__body">A live personal dashboard that runs as my Mac desktop wallpaper, so email, calendar, and
             assignments are visible without opening an app.</p>
-          <p class="project__outcome"><span>Outcome</span>In daily use. It refreshes every 15 minutes and starts at login.</p>
           <div class="btn-row card__foot">
             <a class="btn btn--primary btn--sm" href="https://github.com/kimballjh11/live-personal-dashboard-wallpaper">View in GitHub</a>
           </div>
         </article>
 
-        <article class="card project" id="project-heatmap">
+        <article class="card project project--third" id="project-heatmap">
           <div class="card__media">
             <img src="assets/projects/cfa-heatmap.jpg" width="1600" height="1000" loading="lazy"
                  alt="Heatmap of catering order density across the western Minneapolis suburbs, with clusters around Maple Grove, Plymouth, and Minneapolis.">
           </div>
           <div class="card__head">
             <h3 class="h-card">Chick-fil-A heatmap analysis</h3>
-            <span class="badge badge--shipped">Shipped</span>
           </div>
           <p class="card__body">Maps of where catering demand was, and was not, across the Maple Grove market. I also built
-            the market's official website, <a href="https://chick-fil-amaplegrove.vercel.app">Chick-fil-A Maple Grove</a>.</p>
-          <p class="project__outcome"><span>Outcome</span>Catering grew 47% in six weeks, about $105K a year annualized.</p>
+            the market's official website, <a href="https://chick-fil-amaplegrove.vercel.app">Chick-fil-A Maple Grove</a>.
+            Catering grew 47% in six weeks, about $105K a year annualized.</p>
           <div class="btn-row card__foot">
             <a class="btn btn--primary btn--sm" href="https://github.com/kimballjh11/Chick-Fil-Amaplegrove">View in GitHub</a>
           </div>
         </article>
 
-        <article class="card project" id="project-coach">
+        <article class="card project project--third" id="project-coach">
           <div class="card__head">
             <h3 class="h-card">Coach Health Dashboard</h3>
-            <span class="badge badge--in-use">In use</span>
           </div>
           <p class="card__body">A red, amber, and green health view for the Carnegie Young Leaders fellowship at the
             Institute for Citizens &amp; Scholars, built through Daybreak Collaborative in Google Sheets and Looker Studio.</p>
-          <p class="project__outcome"><span>Outcome</span>In use. Program leaders see at a glance which coaches and teams need support.</p>
         </article>
 
-        <article class="card project project--more" id="project-more">
+        <article class="card project project--third project--more" id="project-more">
           <h3 class="h-card">More on GitHub</h3>
           <p class="card__body">Smaller builds, class study sites, and experiments.</p>
           <div class="btn-row card__foot">
@@ -719,7 +701,7 @@
 }
 </script>
 
-<script src="main.js?v=13"></script>
-<script src="map.js?v=13"></script>
+<script src="main.js?v=15"></script>
+<script src="map.js?v=15"></script>
 </body>
 </html>
