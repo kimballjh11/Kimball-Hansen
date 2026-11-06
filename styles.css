@@ -1046,6 +1046,10 @@ body.has-tabbar { padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bot
 .project .embed__placeholder { min-height: 0; height: 100%; padding: 20px; }
 .project .card__media:has(.embed__frame) { aspect-ratio: auto; }
 
+/* The projects tab runs wider than the other tabs so the three across
+   tiles have room for their screenshots. */
+.wrap--wide { max-width: calc(1440px + 2 * var(--gutter)); }
+
 /* Desktop: two rows of three cards, image on top and text below. Once the
    live tool is loaded, Horizon Planner spans the row so the iframe has room. */
 @media (min-width: 1024px) {
