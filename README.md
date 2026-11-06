@@ -38,7 +38,7 @@ Replace `assets/headshot.jpg` with a portrait cropped to a 4:5 ratio. Keep its a
 
 Replace `assets/resume.pdf` to update the resume. The existing resume links already point to that filename.
 
-The transcript and resume files are excluded from Git by `.gitignore`. Check the intended audience and deployment contents before publishing documents from `assets/`.
+The resume and transcript are committed and published with the site. Replace `assets/transcript.pdf` to update the transcript.
 
 ## Updating the footer date
 
