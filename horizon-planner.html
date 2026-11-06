@@ -17,30 +17,23 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="nav">
-  <div class="wrap nav__inner">
-    <a class="wordmark" href="index.html">Kimball Hansen</a>
-
-    <button class="nav__toggle" type="button" aria-controls="nav-menu" aria-expanded="false">Menu</button>
-
-    <nav aria-label="Primary">
-      <ul class="nav__links" id="nav-menu">
-        <li><a class="back-link" href="index.html#work">← Back to work</a></li>
-        <li><a href="index.html#experience">Experience</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-        <li><a class="btn btn--secondary" href="assets/resume.pdf">Resume</a></li>
-      </ul>
-    </nav>
-
-    <button class="nav__close" type="button">Close</button>
+<header class="header header--case">
+  <div class="wrap header__inner">
+    <a class="wordmark" href="index.html#projects"><span class="wordmark__mark" aria-hidden="true">K</span><span class="wordmark__text">Kimball Hansen</span></a>
+    <div class="header__actions">
+      <a class="back-link" href="index.html#projects">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>
+        <span>Back<span class="back-link__more"> to side projects</span></span>
+      </a>
+      <a class="btn btn--primary btn--sm" href="assets/resume.pdf">Resume</a>
+    </div>
   </div>
 </header>
 
@@ -49,7 +42,7 @@
   <article>
     <section class="case-head wrap" aria-labelledby="case-title">
       <p class="eyebrow">Product and Strategy · Daybreak Collaborative · 2026</p>
-      <h1 class="h-hero" id="case-title">Horizon Planner</h1>
+      <h1 class="h-display" id="case-title">Horizon Planner</h1>
       <p class="lead">A career diagnostic and roadmapping web app that took a consultancy's best advice out of
         one-on-one calls and put it in front of anyone who needed it.</p>
 
@@ -61,7 +54,7 @@
       </div>
     </section>
 
-    <section class="section wrap case-body" aria-labelledby="context-heading">
+    <section class="wrap case-body" aria-labelledby="context-heading">
       <div class="case-section" id="context">
         <h2 id="context-heading">Context</h2>
         <p>Daybreak Collaborative is a social impact consultancy. Careers in that sector do not have the

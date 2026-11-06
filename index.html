@@ -3,349 +3,334 @@
 <head>
 <script>document.documentElement.className += " js";</script>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kimball Hansen | Strategy and Operations</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About me | Kimball Hansen</title>
 <meta name="description" content="Strategic management student at BYU's Marriott School. I build the tools I recommend.">
+<meta name="theme-color" content="#F6F7FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A1020" media="(prefers-color-scheme: dark)">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Kimball Hansen | Strategy and Operations">
+<meta property="og:title" content="Kimball Hansen | Strategy, software, and civic work">
 <meta property="og:description" content="Strategic management student at BYU's Marriott School. I build the tools I recommend.">
 <meta property="og:image" content="assets/headshot.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Kimball Hansen | Strategy and Operations">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kimball Hansen | Strategy, software, and civic work">
 <meta name="twitter:description" content="Strategic management student at BYU's Marriott School. I build the tools I recommend.">
 <meta name="twitter:image" content="assets/headshot.jpg">
 
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-<a class="skip-link" href="#main">Skip to content</a>
+<body class="has-tabbar">
+<a class="skip-link" href="#panels">Skip to content</a>
 
-<header class="nav">
-  <div class="wrap nav__inner">
-    <a class="wordmark" href="index.html">Kimball Hansen</a>
-
-    <button class="nav__toggle" type="button" aria-controls="nav-menu" aria-expanded="false">Menu</button>
-
-    <nav aria-label="Primary">
-      <ul class="nav__links" id="nav-menu">
-        <li><a href="#work">Work</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a class="btn btn--secondary" href="assets/resume.pdf">Resume</a></li>
-      </ul>
-    </nav>
-
-    <button class="nav__close" type="button">Close</button>
+<!-- ── Header ─────────────────────────────────────────────────────── -->
+<header class="header">
+  <div class="wrap header__inner">
+    <a class="wordmark" href="#about"><span class="wordmark__mark" aria-hidden="true">K</span>Kimball Hansen</a>
+    <div class="header__actions">
+      <a class="btn btn--primary btn--sm" href="assets/resume.pdf">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 2v8m0 0 3-3m-3 3L5 7M3 13h10"/></svg>
+        Resume
+      </a>
+    </div>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- ── Hero ──────────────────────────────────────────────────────── -->
-  <section class="hero wrap" aria-labelledby="hero-name">
-    <div class="hero__grid">
+  <!-- ── Identity block (shows on every tab) ──────────────────────── -->
+  <section class="identity" aria-labelledby="name">
+    <div class="wrap identity__inner">
+      <img class="identity__photo" src="assets/headshot.jpg" width="880" height="1100"
+           alt="Kimball Hansen in a navy suit and red plaid tie, smiling.">
       <div>
-        <p class="eyebrow">BYU Marriott School of Business</p>
-        <h1 class="h-hero" id="hero-name">Kimball Hansen</h1>
-        <p class="lead">Strategy and operations. I build the tools I recommend.</p>
-
-        <p class="body hero__body">Strategic management junior at BYU, minoring in political science and
-          international strategy and diplomacy. I work at the seam between analysis and execution: growth and
-          market entry strategy on one side, shipped software and dashboards on the other. I built and ran a
-          service business for seven years, starting at twelve.</p>
-
-        <div class="btn-row">
-          <a class="btn btn--primary" href="assets/resume.pdf">Download resume</a>
-          <a class="btn btn--secondary" href="#contact">Get in touch</a>
-        </div>
-
-        <ul class="quick-links">
-          <li>
-            <a href="https://www.linkedin.com/in/kimball-hansen">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.22 8.02h4.53V24H.22zM8.34 8.02h4.34v2.18h.06c.6-1.14 2.08-2.34 4.28-2.34 4.58 0 5.42 3.01 5.42 6.93V24h-4.52v-7.3c0-1.74-.03-3.98-2.43-3.98-2.43 0-2.8 1.9-2.8 3.86V24H8.34z"/></svg>
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/kimballjh11">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a href="mailto:kjh11@byu.edu">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="1" y="3.5" width="14" height="9" rx="1"/><path d="m1.6 4.4 6.4 4.4 6.4-4.4"/></svg>
-              Email
-            </a>
-          </li>
-        </ul>
+        <h1 class="h-display" id="name">Kimball Hansen</h1>
+        <p class="identity__line">Strategic management student at BYU's Marriott School. I build the tools I recommend.</p>
       </div>
-
-      <div class="plate">
-        <img src="assets/headshot.jpg" width="880" height="1100"
-             alt="Kimball Hansen, a business student at BYU, in a suit and tie.">
+      <div class="identity__actions">
+        <a class="btn btn--secondary btn--sm" href="#contact">Get in touch</a>
+        <a class="btn btn--secondary btn--sm" href="https://www.linkedin.com/in/kimball-hansen">LinkedIn</a>
+        <a class="btn btn--secondary btn--sm" href="https://github.com/kimballjh11">GitHub</a>
       </div>
     </div>
   </section>
 
-  <!-- ── 01 Selected work ──────────────────────────────────────────── -->
-  <section class="section section--band section--ruled" id="work" aria-labelledby="work-heading">
+  <!-- ── Tab bar ──────────────────────────────────────────────────── -->
+  <!-- Plain anchor links without JS. main.js adds the ARIA tab roles. -->
+  <nav class="tabbar" aria-label="Sections">
+    <ul class="tabbar__list" data-tablist>
+      <li><a class="tabbar__tab" id="tab-about" href="#about" data-title="About me">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+        <span class="tabbar__long">About me</span><span class="tabbar__short">About</span></a></li>
+      <li><a class="tabbar__tab" id="tab-experience" href="#experience" data-title="Work experience">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M3 12h18"/></svg>
+        <span class="tabbar__long">Work experience</span><span class="tabbar__short">Work</span></a></li>
+      <li><a class="tabbar__tab" id="tab-education" href="#education" data-title="Education">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c2 2 10 2 12 0v-5M22 9v6"/></svg>
+        <span class="tabbar__long">Education</span><span class="tabbar__short">School</span></a></li>
+      <li><a class="tabbar__tab" id="tab-projects" href="#projects" data-title="Side projects">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg>
+        <span class="tabbar__long">Side projects</span><span class="tabbar__short">Projects</span></a></li>
+      <li><a class="tabbar__tab" id="tab-contact" href="#contact" data-title="Contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+        <span class="tabbar__long">Contact</span><span class="tabbar__short">Contact</span></a></li>
+    </ul>
+  </nav>
+
+  <div id="panels" data-panels-top tabindex="-1"></div>
+
+  <!-- ── 01 About me ──────────────────────────────────────────────── -->
+  <section class="panel" id="about" aria-labelledby="about-heading">
     <div class="wrap">
-      <header class="sec-head" data-reveal>
-        <p class="eyebrow"><span class="num">01</span> / Selected work</p>
-        <h2 class="h-sec" id="work-heading">Selected work</h2>
-        <p class="sec-intro">Four projects, in the order I would want you to read them.</p>
+      <header class="panel__head">
+        <p class="eyebrow"><span class="num">01</span> / About me</p>
+        <h2 class="h-panel" id="about-heading" data-panel-heading tabindex="-1">Analysis and execution</h2>
       </header>
 
-      <div class="cards">
+      <div class="grid grid--bio">
+        <div class="card prose">
+          <p>I am a strategic management student at BYU's Marriott School who builds the tools I recommend.
+            My work sits between analysis and execution: growth strategy and market entry on one side, shipped
+            software and dashboards on the other.</p>
+          <p>I started a lawn care company at twelve and spent two years serving in the San Francisco and
+            Oakland area. I now split my time between recruiting tools for the Marriott strategy department,
+            AI research at BYU's SAIL Lab, and software for nonprofits.</p>
+          <p>I am heading toward consulting and toward work where economic policy, business strategy, and civic
+            responsibility meet, especially international trade.</p>
+        </div>
 
-        <article class="card card--linked" data-reveal>
-          <h3 class="card__title">Horizon Planner</h3>
-          <p class="eyebrow card__meta">Product and Strategy · Daybreak Collaborative · 2026</p>
-          <p class="card__desc">A career diagnostic and roadmapping web app for people working in social
-            impact. I scoped the product with the founder, designed the recommendation logic, and shipped it
-            in React and Next.js. Over 100 people used it in the launch month.</p>
-          <ul class="tags">
-            <li>Product Strategy</li>
-            <li>React / Next.js</li>
-            <li>Client Work</li>
-          </ul>
-          <a class="card__cta" href="horizon-planner.html">Read the case study →</a>
-        </article>
+        <div class="card">
+          <h3 class="h-card">Quick facts</h3>
+          <dl class="facts" style="margin-top:14px">
+            <div class="facts__row"><dt>From</dt><dd>Minneapolis, Minnesota</dd></div>
+            <div class="facts__row"><dt>Based in</dt><dd>Provo, Utah</dd></div>
+            <div class="facts__row"><dt>Languages</dt><dd>English, Spanish (fluent), Portuguese (conversational), conversational Mam and Samoan</dd></div>
+            <div class="facts__row"><dt>Building with</dt><dd>React, Next.js, Python, SQL, Google Sheets and Looker Studio, Tableau, Claude</dd></div>
+          </dl>
+        </div>
+      </div>
 
-        <article class="card card--linked" data-reveal>
-          <h3 class="card__title">Franchise Growth Program</h3>
-          <p class="eyebrow card__meta">Strategic Growth Intern · Chick-fil-A · May — Aug 2026</p>
-          <p class="card__desc">Owned catering and mobile app growth at a Minneapolis franchise. I mapped
-            36 months of order data to target ZIP codes and built the outreach around what it said, then
-            designed a reusable table marker that replaced a single-use one nationally.</p>
-          <ul class="tags">
-            <li>Growth</li>
-            <li>Analytics</li>
-            <li>Operations</li>
-          </ul>
-          <a class="card__cta" href="chick-fil-a.html">Read the case study →</a>
-        </article>
-
-        <article class="card card--linked" data-reveal>
-          <h3 class="card__title">Lawn and Landscape Company</h3>
-          <p class="eyebrow card__meta">Founder · Kimball Hansen, LLC · May 2016 — Aug 2023</p>
-          <p class="card__desc">Started at twelve, ran it for seven years, and grew it to $200K in lifetime
-            revenue on repeat residential clients. Pricing, routing, hiring, and retention, all of it mine.</p>
-          <ul class="tags">
-            <li>Founder</li>
-            <li>Operations</li>
-            <li>P&amp;L</li>
-          </ul>
-          <a class="card__cta" href="lawn-care.html">Read the case study →</a>
-        </article>
-
-        <article class="card" data-reveal>
-          <h3 class="card__title">Mentor and Fellow Health Tracker</h3>
-          <p class="eyebrow card__meta">Analyst · Carnegie fellowship program · 2026</p>
-          <p class="card__desc">A red-amber-green tracker that turned scattered mentor reporting into one
-            Looker Studio view, so program leadership could triage issues between mentors and fellows in real
-            time. I built the intake form, wrote the scoring logic natively in Sheets, and configured the
-            reporting layer.</p>
-          <ul class="tags">
-            <li>Dashboards</li>
-            <li>Looker Studio</li>
-            <li>Process Design</li>
-          </ul>
-          <p class="card__note">Case study in progress</p>
-        </article>
-
+      <div class="callout no-print" style="margin-top:16px">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6.5v.01"/></svg>
+        <p>Phase 2 adds the interactive map of where I have lived and traveled, interests, and fun facts.</p>
       </div>
     </div>
   </section>
 
-  <!-- ── 02 Experience and education ───────────────────────────────── -->
-  <section class="section section--ruled" id="experience" aria-labelledby="experience-heading">
+  <!-- ── 02 Work experience ───────────────────────────────────────── -->
+  <section class="panel" id="experience" aria-labelledby="experience-heading">
     <div class="wrap">
-      <header class="sec-head" data-reveal>
-        <p class="eyebrow"><span class="num">02</span> / Experience and education</p>
-        <h2 class="h-sec" id="experience-heading">Experience and education</h2>
+      <header class="panel__head">
+        <p class="eyebrow"><span class="num">02</span> / Work experience</p>
+        <h2 class="h-panel" id="experience-heading" data-panel-heading tabindex="-1">Work experience</h2>
+        <p class="lead">Newest first. Open a role to see what I did.</p>
       </header>
 
-      <div class="timeline-group" data-reveal>
-        <h3 class="eyebrow timeline-group__label">Experience</h3>
-        <div class="timeline">
-          <div class="timeline__row">
-            <p class="eyebrow timeline__date">Oct 2026 to Present</p>
-            <div>
-              <p class="timeline__role">AI Recruiting Fellow, Marriott School Strategy Department</p>
-              <p class="timeline__detail">Built and maintain a weekly job postings dashboard for the strategy
-                program: scored postings, sourcing rules, and an archive of closed roles.</p>
-            </div>
+      <div class="chips" data-needs-js data-filter-group="exp-list" data-filter-status="exp-status" role="group" aria-label="Filter roles">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-filter="strategy" aria-pressed="false">Strategy</button>
+        <button class="chip" type="button" data-filter="software" aria-pressed="false">Software</button>
+        <button class="chip" type="button" data-filter="research" aria-pressed="false">Research</button>
+        <button class="chip" type="button" data-filter="civic" aria-pressed="false">Civic</button>
+      </div>
+      <p class="visually-hidden" id="exp-status" aria-live="polite"></p>
+
+      <div id="exp-list">
+        <details class="acc" data-filter-item data-tags="strategy software">
+          <summary>
+            <span class="acc__title">AI Recruiting Fellow, Marriott School Strategy Department</span>
+            <span class="acc__meta">Oct 2026 to Present</span>
+            <span class="acc__result">A weekly job postings dashboard for the whole strategy program.</span>
+          </summary>
+          <div class="acc__body">
+            <ul class="bullets">
+              <li>Build and update weekly a job postings dashboard covering Summer 2027 internships, Spring 2027, and full time roles for 2027 to 2028.</li>
+              <li>Postings are scored 1 to 5 for strategy fit across seven weighted factors, with a Read Me tab documenting the rubric, sourcing rules, and weekly checklist.</li>
+            </ul>
+            <ul class="tags"><li>Strategy</li><li>Software</li></ul>
           </div>
-          <div class="timeline__row">
-            <p class="eyebrow timeline__date">Oct 2026 to Present</p>
-            <div>
-              <p class="timeline__role">Research Assistant, SAIL Lab (Social Science and AI Lab), BYU</p>
-              <p class="timeline__detail">Working on a study of AI training for productive political
-                disagreement.</p>
-            </div>
+        </details>
+
+        <details class="acc" data-filter-item data-tags="strategy software">
+          <summary>
+            <span class="acc__title">Strategic Growth Intern, Chick-fil-A</span>
+            <span class="acc__meta">Maple Grove market, Minneapolis area · May 2026 to Aug 2026</span>
+            <span class="acc__result">Grew catering revenue 47% in six weeks.</span>
+          </summary>
+          <div class="acc__body">
+            <ul class="bullets">
+              <li>Grew catering revenue 47% (about $105K a year) in six weeks by mapping 36 months of mobile orders to target ZIP codes.</li>
+              <li>Designed a reusable metal table marker rolled out in multiple markets, cutting about $500K a year in national sticker costs.</li>
+            </ul>
+            <ul class="tags"><li>Strategy</li><li>Software</li></ul>
+            <p class="card__foot"><a href="chick-fil-a.html">Read the case study</a></p>
           </div>
-          <div class="timeline__row">
-            <p class="eyebrow timeline__date">Jan 2026 — Present</p>
-            <div>
-              <p class="timeline__role">Freelance Strategy Consultant</p>
-              <p class="timeline__detail">Strategy and product work across social impact, e-commerce, and
-                civic programs, including Daybreak Collaborative.</p>
-            </div>
-          </div>
-          <div class="timeline__row">
-            <p class="eyebrow timeline__date">Dec 2025 to Aug 2026</p>
-            <div>
-              <p class="timeline__role">Research Assistant, BYU Marriott School</p>
-              <p class="timeline__detail">Supported Professor Murff on the strategy department's program
-                connectivity platform.</p>
-            </div>
-          </div>
-          <div class="timeline__row">
-            <p class="eyebrow timeline__date">May 2026 — Aug 2026</p>
-            <div>
-              <p class="timeline__role">Strategic Growth Intern, Chick-fil-A</p>
-              <p class="timeline__detail">Catering pipeline, mobile app adoption, and a reusable table marker
-                now rolled out in multiple markets.</p>
-            </div>
-          </div>
-          <div class="timeline__row">
-            <p class="eyebrow timeline__date">May 2016 — Aug 2023</p>
-            <div>
-              <p class="timeline__role">Founder, Kimball Hansen, LLC</p>
-              <p class="timeline__detail">Built and operated a residential lawn and landscape business from
-                age twelve through high school.</p>
-            </div>
-          </div>
-        </div>
+        </details>
       </div>
 
-      <div class="timeline-group" data-reveal>
-        <h3 class="eyebrow timeline-group__label">Civic</h3>
-        <div class="timeline">
-          <div class="timeline__row">
-            <p class="eyebrow timeline__date">Aug 2026 to Present</p>
-            <div>
-              <p class="timeline__role">Board Member, &amp;You</p>
-              <p class="timeline__detail">Youth civic engagement.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-group" data-reveal>
-        <h3 class="eyebrow timeline-group__label">Education</h3>
-        <div class="timeline">
-          <div class="timeline__row">
-            <p class="eyebrow timeline__date">2022 — 2028</p>
-            <div>
-              <p class="timeline__role">Brigham Young University, Marriott School of Business</p>
-              <p class="timeline__detail">B.S. Strategic Management, expected April 2028. Minors in Political Science and
-                International Strategy and Diplomacy. GPA 3.90 / 4.00. BYU Academic Scholarship, merit-based.</p>
-            </div>
-          </div>
-        </div>
-
-        <p class="timeline__aside">Relevant coursework: Foundations of Strategy, Economics of Strategy,
-          Introduction to Management Consulting, Principles of Finance, Global Supply Chain Management,
-          Statistical Data Analysis, Middle East Politics.</p>
-        <p class="timeline__aside">Case competitions: Bain &amp; Company (finalist), BYU M&amp;A/LBO
-          (finalist), Sunoco expansion strategy. Member of the BYU Management Consulting, Investment Banking,
-          and Private Equity associations.</p>
-        <p class="timeline__aside">Two years of service in the San Francisco and Oakland area, 2023 to 2025.</p>
-        <p class="timeline__aside">Full transcript available on request.</p>
+      <div class="callout no-print" style="margin-top:16px">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6.5v.01"/></svg>
+        <p>Phase 3 adds every role, the civic and service group, and early leadership.</p>
       </div>
     </div>
   </section>
 
-  <!-- ── 03 About ──────────────────────────────────────────────────── -->
-  <section class="section section--band section--ruled" id="about" aria-labelledby="about-heading">
+  <!-- ── 03 Education ─────────────────────────────────────────────── -->
+  <section class="panel" id="education" aria-labelledby="education-heading">
     <div class="wrap">
-      <header class="sec-head" data-reveal>
-        <p class="eyebrow"><span class="num">03</span> / About</p>
-        <h2 class="h-sec" id="about-heading">About</h2>
+      <header class="panel__head">
+        <p class="eyebrow"><span class="num">03</span> / Education</p>
+        <h2 class="h-panel" id="education-heading" data-panel-heading tabindex="-1">Education</h2>
       </header>
 
-      <div class="about__grid">
-        <div class="prose" data-reveal>
-          <p>I am drawn to problems where the analysis and the execution cannot be separated. A market entry
-            recommendation that nobody can implement is an expensive document. A tool nobody asked for is a
-            hobby. The work I care about sits between them.</p>
-          <p>That is most of what I do now. At Daybreak I scoped the strategy and then built the thing. In a
-            franchise growth role I mapped three years of order data and then built the outreach around what
-            it said. I started a lawn care company at twelve because I wanted to see whether the whole loop,
-            pricing through retention, would close.</p>
-          <p>I am heading toward management consulting, and eventually toward work in geopolitics and the
-            Middle East, where I have read seriously for years. Outside of that I ski, I cook, and I speak
-            fluent Spanish.</p>
+      <div class="card">
+        <div class="card__head">
+          <div>
+            <h3 class="h-card">Brigham Young University, Marriott School of Business</h3>
+            <p class="card__meta">B.S. Strategic Management · Provo, Utah · Expected April 2028</p>
+          </div>
+          <span class="badge badge--shipped">GPA 3.90</span>
         </div>
+        <p class="card__body">Minors in International Strategy and Diplomacy and Political Science. BYU Academic
+          Scholarship, merit based.</p>
+        <div class="btn-row card__foot">
+          <a class="btn btn--primary" href="assets/transcript.pdf" target="_blank" rel="noopener">View transcript</a>
+          <a class="btn btn--secondary" href="assets/transcript.pdf" download="Kimball-Hansen-BYU-transcript.pdf">Download PDF</a>
+        </div>
+      </div>
 
-        <div class="facts" data-reveal>
-          <div class="facts__row">
-            <p class="facts__key">Location</p>
-            <p class="facts__val">Provo, Utah</p>
-          </div>
-          <div class="facts__row">
-            <p class="facts__key">Studying</p>
-            <p class="facts__val">Strategic Management, B.S. 2028</p>
-          </div>
-          <div class="facts__row">
-            <p class="facts__key">Languages</p>
-            <p class="facts__val">English, Spanish (fluent), Portuguese (conversational), conversational Mam and Samoan</p>
-          </div>
-          <div class="facts__row">
-            <p class="facts__key">Building with</p>
-            <p class="facts__val">React, Next.js, Python, SQL, Google Sheets and Looker Studio, Tableau</p>
-          </div>
-          <div class="facts__row">
-            <p class="facts__key">Currently</p>
-            <p class="facts__val">Researching AI and political disagreement at BYU's SAIL Lab; building recruiting tools for the Marriott strategy department.</p>
-          </div>
-        </div>
+      <div class="callout no-print" style="margin-top:16px">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6.5v.01"/></svg>
+        <p>Phase 4 adds coursework by area, case competitions, associations, and the inline transcript viewer.</p>
       </div>
     </div>
   </section>
 
-  <!-- ── 04 Contact ────────────────────────────────────────────────── -->
-  <section class="section section--ruled" id="contact" aria-labelledby="contact-heading">
+  <!-- ── 04 Side projects ─────────────────────────────────────────── -->
+  <section class="panel" id="projects" aria-labelledby="projects-heading">
     <div class="wrap">
-      <header class="sec-head" data-reveal>
-        <p class="eyebrow"><span class="num">04</span> / Contact</p>
-        <h2 class="h-sec" id="contact-heading">Let's talk</h2>
-        <p class="sec-intro">The fastest way to reach me is email. I answer everything.</p>
+      <header class="panel__head">
+        <p class="eyebrow"><span class="num">04</span> / Side projects</p>
+        <h2 class="h-panel" id="projects-heading" data-panel-heading tabindex="-1">Side projects</h2>
+        <p class="lead">Tools I built to make a decision easier.</p>
       </header>
 
-      <div data-reveal>
-        <a class="contact__email" href="mailto:kjh11@byu.edu">kjh11@byu.edu</a>
+      <div class="grid grid--2">
+        <article class="card card--lift">
+          <div class="card__head">
+            <h3 class="h-card">Horizon Planner</h3>
+            <span class="badge badge--shipped">Shipped</span>
+          </div>
+          <p class="card__meta">Daybreak Collaborative · 2026</p>
+          <p class="card__body">A career diagnostic that turns a short intake into a personalized roadmap for people
+            working in social impact. Over 100 people used it in the launch month.</p>
+          <details class="acc" style="margin-top:16px">
+            <summary><span class="acc__title">How it works</span></summary>
+            <div class="acc__body">
+              <ul class="bullets">
+                <li>Visitors answer a short intake about their sector and a few reflective questions, with an optional resume upload.</li>
+                <li>Claude generates a roadmap with a tailored power statement, a 30, 60, and 90 day action plan, and curated resources.</li>
+                <li>Results download as a PDF and are emailed to the user.</li>
+              </ul>
+            </div>
+          </details>
+          <ul class="tags"><li>Next.js</li><li>React</li><li>Claude API</li><li>Supabase</li></ul>
+          <div class="btn-row card__foot">
+            <a class="btn btn--primary btn--sm" href="horizon-planner.html">Case study</a>
+            <a class="btn btn--secondary btn--sm" href="https://www.daybreak-collaborative.com/horizon-planner/">Live tool</a>
+          </div>
+        </article>
 
-        <ul class="quick-links">
-          <li>
-            <a href="https://www.linkedin.com/in/kimball-hansen">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.22 8.02h4.53V24H.22zM8.34 8.02h4.34v2.18h.06c.6-1.14 2.08-2.34 4.28-2.34 4.58 0 5.42 3.01 5.42 6.93V24h-4.52v-7.3c0-1.74-.03-3.98-2.43-3.98-2.43 0-2.8 1.9-2.8 3.86V24H8.34z"/></svg>
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/kimballjh11">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a href="mailto:kjh11@byu.edu">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="1" y="3.5" width="14" height="9" rx="1"/><path d="m1.6 4.4 6.4 4.4 6.4-4.4"/></svg>
-              Email
-            </a>
-          </li>
-        </ul>
+        <article class="card card--lift">
+          <div class="card__media">
+            <img src="assets/projects/trader-dashboard.png" width="1170" height="825" loading="lazy"
+                 alt="Trading agent dashboard showing an illustrative October simulation: equity lines for the Claude book, the rules only control book, and SPY.">
+          </div>
+          <div class="card__head">
+            <h3 class="h-card">Claude day trading agent</h3>
+            <span class="badge badge--paper">Paper mode</span>
+          </div>
+          <p class="card__body">An experiment: Claude picks trades inside deterministic risk and sizing rules, beside a
+            rules only control book, both benchmarked against SPY.</p>
+          <details class="acc" style="margin-top:16px">
+            <summary><span class="acc__title">View the files</span></summary>
+            <div class="acc__body">
+              <ul class="tree" aria-label="Repository files">
+                <li><span class="tree__name">CLAUDE.md</span><span class="tree__note">Hard rules for every run</span></li>
+                <li><span class="tree__name">risk_rules.json</span><span class="tree__note">Risk rules</span></li>
+                <li><span class="tree__name tree__name--dir">scripts</span><span class="tree__note">Deterministic Python</span>
+                  <ul><li><span class="tree__name">paper_broker.py</span><span class="tree__note">Paper order handling</span></li></ul>
+                </li>
+                <li><span class="tree__name tree__name--dir">dashboard</span><span class="tree__note">Vercel dashboard</span></li>
+              </ul>
+            </div>
+          </details>
+          <p class="small muted" style="margin-top:12px">Research project. Not investment advice.</p>
+          <div class="btn-row card__foot">
+            <a class="btn btn--secondary btn--sm" href="https://github.com/kimballjh11/claude-day-trader-agent">GitHub repo</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="callout no-print" style="margin-top:16px">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6.5v.01"/></svg>
+        <p>Phase 5 adds the Plash dashboard, the Chick-fil-A heatmap, the Coach Health Dashboard, and the live Horizon Planner embed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 05 Contact ───────────────────────────────────────────────── -->
+  <section class="panel" id="contact" aria-labelledby="contact-heading">
+    <div class="wrap">
+      <header class="panel__head">
+        <p class="eyebrow"><span class="num">05</span> / Contact</p>
+        <h2 class="h-panel" id="contact-heading" data-panel-heading tabindex="-1">Let's talk</h2>
+        <p class="lead">The fastest way to reach me is email. I answer everything.</p>
+      </header>
+
+      <div class="card">
+        <div class="contact-row">
+          <span class="eyebrow">BYU email</span>
+          <span class="contact-row__value" id="c-byu"><noscript>kjh11 at byu dot edu</noscript></span>
+          <span class="btn-row">
+            <button class="btn btn--secondary btn--sm" type="button" data-reveal="mail" data-r="ude.uyb@11hjk" aria-controls="c-byu" hidden>Show email</button>
+            <button class="btn btn--secondary btn--sm" type="button" data-copy-for="c-byu" data-copy-status="copy-status" hidden>Copy</button>
+          </span>
+        </div>
+        <div class="contact-row">
+          <span class="eyebrow">Personal email</span>
+          <span class="contact-row__value" id="c-personal"><noscript>kimballjh11 at gmail dot com</noscript></span>
+          <span class="btn-row">
+            <button class="btn btn--secondary btn--sm" type="button" data-reveal="mail" data-r="moc.liamg@11hjllabmik" aria-controls="c-personal" hidden>Show email</button>
+            <button class="btn btn--secondary btn--sm" type="button" data-copy-for="c-personal" data-copy-status="copy-status" hidden>Copy</button>
+          </span>
+        </div>
+        <div class="contact-row">
+          <span class="eyebrow">Phone</span>
+          <span class="contact-row__value" id="c-phone"><noscript>On my resume</noscript></span>
+          <span class="btn-row">
+            <button class="btn btn--secondary btn--sm" type="button" data-reveal="tel" data-r="3897-256-108" aria-controls="c-phone" hidden>Show phone</button>
+            <button class="btn btn--secondary btn--sm" type="button" data-copy-for="c-phone" data-copy-status="copy-status" hidden>Copy</button>
+          </span>
+        </div>
+        <div class="contact-row">
+          <span class="eyebrow">LinkedIn</span>
+          <span class="contact-row__value"><a href="https://www.linkedin.com/in/kimball-hansen">linkedin.com/in/kimball-hansen</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="eyebrow">GitHub</span>
+          <span class="contact-row__value"><a href="https://github.com/kimballjh11">github.com/kimballjh11</a></span>
+        </div>
+        <p class="copy-status" id="copy-status" aria-live="polite"></p>
+      </div>
+
+      <div class="btn-row" style="margin-top:16px">
+        <a class="btn btn--primary" href="assets/resume.pdf" download="Kimball-Hansen-Resume.pdf">Download resume</a>
       </div>
     </div>
   </section>
@@ -364,9 +349,7 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Kimball Hansen",
-  "jobTitle": "Strategy and Operations",
   "description": "Strategic management student at BYU's Marriott School.",
-  "email": "mailto:kjh11@byu.edu",
   "image": "assets/headshot.jpg",
   "alumniOf": {
     "@type": "CollegeOrUniversity",
