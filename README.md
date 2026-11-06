@@ -1,100 +1,55 @@
-# Kimball Hansen — personal site
+# Kimball Hansen personal site
 
-Static site. Plain HTML, one stylesheet, one small script. No build step, no npm, no framework.
-Open `index.html` by double-clicking it and the whole site works, offline, including every internal link.
+Static site built with HTML, CSS, and vanilla JavaScript. There is no build step, package manager, or framework. Open `index.html` directly to view it locally.
 
-```
-index.html              hero, selected work, experience, about, contact
-horizon-planner.html    case study
-chick-fil-a.html        case study
-lawn-care.html          case study
-styles.css              all styling for all four pages
-main.js                 sticky-nav rule, mobile menu, scroll reveal
-assets/headshot.jpg     880 × 1100 (4:5)
-assets/favicon.svg
-assets/resume.pdf
-.gitignore              keeps .DS_Store out of version control
-```
+## Files
 
-Private files (transcript, raw headshot, resume copy, old prompts and briefs) live in
-`../PersonalSite-private/`, outside this folder, so they are never deployed. Keep it that way.
+| File | Purpose |
+|---|---|
+| `index.html` | Five section site: About me, Work experience, Education, Side projects, Contact |
+| `horizon-planner.html` | Horizon Planner case study |
+| `chick-fil-a.html` | Chick-fil-A case study |
+| `lawn-care.html` | Lawn care business case study |
+| `styles.css` | Shared layout, colors, responsive styles, dark mode, print styles |
+| `main.js` | Section navigation, filters, accordions, and small interface behaviors |
+| `map.js` | Interactive United States map behavior |
+| `tools/build-map.mjs` | Instructions and generator for the inline map data |
+| `assets/` | Images, logos, project examples, resume, transcript, and favicon |
+
+## Current design and behavior
+
+The site uses five hash linked sections: `#about`, `#experience`, `#education`, `#projects`, and `#contact`. Navigation works as page anchors when JavaScript is unavailable. The experience section has category filters and expandable entries. The map is embedded locally and does not use a map service at runtime. Dark mode follows the visitor's operating system setting. Reduced motion is supported, and the print stylesheet lays out the content for paper.
+
+The interactive map uses these source facts: states visited are all states except Alaska, Maine, Vermont, Mississippi, and Massachusetts. Places lived are Utah, Spokane, Durham, Minneapolis, San Francisco, and Oakland. Minneapolis is the hometown marker. Keep the list in the map legend aligned with the state data in `index.html` and the marker data in `map.js`.
 
 ## Editing content
 
-All copy lives directly in the HTML. There is no CMS and no templating, so edit the page you want to change.
+Page copy lives in the HTML. Edit the matching file directly.
 
-- **Add or reorder a project:** copy an `<article class="card">` block in `index.html` and move it. Keep
-  `card--linked` only on cards that link to a case study; the class is what makes the whole card clickable.
-- **Write a new case study:** copy `lawn-care.html`, change the title, meta description, header, metrics, and
-  the four body sections. The four sections — Context, What I did, Result, What I would do differently — are
-  deliberate. The last one is the most credible thing on the page; do not drop it.
-- **Update the metric count on a case study:** the `style="--metric-cols: 4"` on `.metrics` sets how many
-  columns appear from 768px up. Use 3 or 4. They always stack two-up on mobile.
-- **Change the date in the footer:** search for `Last updated November 2026`, which appears once per page,
-  and replace it on all four pages at once:
-  `sed -i '' 's/Last updated November 2026/Last updated MONTH YEAR/' *.html`
+To add or reorder a project, copy a project card in `index.html`. Keep the linked card class only for cards that lead to a case study. To add a case study, use one of the existing case study pages as a template. Keep the sections Context, What I did, Result, and What I would do differently. Update its title, description, metrics, and footer links too.
 
-## Swapping the headshot
+Every factual claim and number should be checked against a source before publishing. Do not fill gaps by guessing. Unknown details should stay as visible `{{PLACEHOLDER}}` chips until verified. Do not add private recruiting details, test scores, home address, unapproved research details, or stories about private individuals. Keep research descriptions general unless the research team has approved more detail.
 
-Replace `assets/headshot.jpg` with your own file at a 4:5 ratio, then update **one line** in `index.html`:
+The current open placeholder is `{{DOMAIN}}`, shown once in the footer on each HTML page. After choosing a domain, replace it on all four pages, add a canonical tag to each page, and make the social image URLs absolute.
 
-```html
-<img src="assets/headshot.jpg" width="880" height="1100" alt="...">
-```
+## Updating common assets
 
-Set `width` and `height` to the real pixel dimensions of the new file. They prevent layout shift while the
-image loads, so wrong values are worse than no values. From a Mac terminal, crop and convert any image with:
+Replace `assets/headshot.jpg` with a portrait cropped to a 4:5 ratio. Keep its actual pixel dimensions in the image element in `index.html`.
+
+Replace `assets/resume.pdf` to update the resume. The existing resume links already point to that filename.
+
+The transcript and resume files are excluded from Git by `.gitignore`. Check the intended audience and deployment contents before publishing documents from `assets/`.
+
+## Updating the footer date
+
+The footer currently says `Last updated November 2026`. Replace the date in all four HTML files when the site content changes:
 
 ```sh
-sips -s format jpeg -s formatOptions 72 -c 1100 880 input.png --out assets/headshot.jpg
+sed -i '' 's/Last updated November 2026/Last updated MONTH YEAR/' *.html
 ```
-
-## Swapping the resume
-
-Drop a new PDF at `assets/resume.pdf`. Nothing else changes — every resume link on every page already points
-there. Keep the filename.
 
 ## Deploying
 
-Any static host. No configuration, no build command, no output directory.
+This is a static site and needs no build command or output directory. It can be hosted by GitHub Pages, Netlify, or Vercel. The repository currently has no Git remote configured, so deployment status cannot be inferred from this checkout.
 
-- **GitHub Pages:** push this folder to a repo, then Settings → Pages → deploy from `main`, root.
-- **Netlify / Vercel:** drag the folder onto the dashboard, or connect the repo and leave the build settings
-  empty.
-
-After you have a domain, do these three things:
-
-1. Replace `{{DOMAIN}}` everywhere (see the checklist below).
-2. Add a canonical tag to each page's `<head>`: `<link rel="canonical" href="https://yourdomain.com/">`.
-3. Make the social images absolute. `og:image` and `twitter:image` currently read `assets/headshot.jpg`;
-   scrapers need the full `https://yourdomain.com/assets/headshot.jpg`.
-
-## Placeholder checklist
-
-Every unresolved value is wrapped in `<span class="todo">` and shows as a yellow highlighted chip on the page,
-so you cannot miss one while editing and nothing breaks if one ships. Each is a plain find-and-replace.
-
-| Placeholder | File | Appears | What it expects |
-|---|---|---|---|
-| `{{DOMAIN}}` | `index.html`, `horizon-planner.html`, `chick-fil-a.html`, `lawn-care.html` | 1× per page | Footer domain, written plainly, e.g. `kimballhansen.com`. Leave until a domain exists. |
-
-To clear the domain everywhere at once, from this folder:
-
-```sh
-sed -i '' 's/<span class="todo" title="Replace before publishing">{{DOMAIN}}<\/span>/kimballhansen.com/g' *.html
-```
-
-## Worth knowing
-
-- **Every number on this site comes from your resume**, not from the site generator: 47% catering growth,
-  ~$105K annualized catering revenue, ~$500K sticker cost, $60K app revenue, $200K lifetime and $50K final-year
-  lawn revenue, 50+ contracts, 90% retention, 100+ Horizon Planner users, GPA 3.90. If you revise the resume,
-  revise these too — a recruiter will read both.
-- **GPA is 3.90**, per the cumulative GPA on the September 2026 transcript. The resume PDF still says 3.91.
-  Update the resume to 3.90 before you send either out.
-- **Dark mode is automatic**, driven by the visitor's OS setting. There is no toggle by design. Both palettes
-  are defined in one place at the top of `styles.css`.
-- **The site works with JavaScript off.** Nav links wrap onto a second row instead of collapsing into a
-  hamburger, and all content is visible because the reveal animation only ever hides things via a class that
-  JS adds.
-- **Printing works.** The nav, footer, and buttons drop out, and link URLs are expanded after the link text.
+Before deployment, review the placeholder, PDF, and image contents in the exact folder or repository being published. For a custom domain, replace `{{DOMAIN}}` in all four pages, add a canonical link in each page head, and use absolute URLs for social preview images.
