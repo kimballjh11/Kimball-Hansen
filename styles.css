@@ -1039,6 +1039,13 @@ body.has-tabbar { padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bot
    buttons line up across a row. */
 .project { display: flex; flex-direction: column; }
 .project > .card__foot { margin-top: auto; padding-top: 20px; }
+.project--wide { grid-column: 1 / -1; }
+.project__wide { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.project__text { align-self: start; }
+.project__text > .card__foot { margin-top: 20px; }
+@media (min-width: 1024px) {
+  .project__wide { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 28px; }
+}
 .project__outcome {
   margin-top: 14px;
   padding: 12px 14px;
@@ -1066,5 +1073,15 @@ body.has-tabbar { padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bot
   background: var(--surface-2);
   overflow: hidden;
 }
+.embed__placeholder {
+  display: grid;
+  justify-items: start;
+  align-content: center;
+  gap: 10px;
+  min-height: 240px;
+  height: 100%;
+  padding: 24px;
+}
+@media (min-width: 1024px) { .embed__placeholder { min-height: 360px; } }
 .embed__frame { display: block; width: 100%; height: 680px; border: 0; background: #fff; }
 

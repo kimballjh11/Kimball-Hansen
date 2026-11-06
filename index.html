@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="styles.css?v=11">
+<link rel="stylesheet" href="styles.css?v=13">
 </head>
 
 <body class="has-tabbar">
@@ -512,81 +512,6 @@
           </div>
         </div>
       </details>
-
-      <h3 class="h-group">Coursework</h3>
-      <p class="muted small" style="margin:-6px 0 14px">Starred courses are the most relevant to strategy, consulting, and international work. Courses marked In progress are this semester.</p>
-
-      <div class="grid grid--2 courses">
-        <div class="card">
-          <h4 class="h-card">Strategy and management</h4>
-          <ul class="course-list">
-            <li class="is-key"><span class="course__code">STRAT 401</span>Foundations of Strategy<span class="course__tag">In progress</span></li>
-            <li class="is-key"><span class="course__code">STRAT 402</span>Economics of Strategy<span class="course__tag">In progress</span></li>
-            <li class="is-key"><span class="course__code">STRAT 325</span>Introduction to Management Consulting</li>
-            <li><span class="course__code">STRAT 326</span>Career Development<span class="course__tag">In progress</span></li>
-            <li><span class="course__code">ENT 101</span>Introduction to Entrepreneurship</li>
-            <li><span class="course__code">M COM 320</span>Management Communication</li>
-            <li><span class="course__code">ACC 241</span>Business Law</li>
-            <li><span class="course__code">MSB 380</span>Executive Lectures<span class="course__tag">In progress</span></li>
-            <li><span class="course__code">MSB 180</span>Business Career Lecture Series</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h4 class="h-card">International and political science</h4>
-          <ul class="course-list">
-            <li class="is-key"><span class="course__code">MSB 430</span>Introduction to International Business<span class="course__tag">In progress</span></li>
-            <li class="is-key"><span class="course__code">POLI 357</span>Middle East Politics<span class="course__tag">In progress</span></li>
-            <li class="is-key"><span class="course__code">GSCM 201</span>Introduction to Global Supply Chain Management</li>
-            <li><span class="course__code">GSCM 211</span>Introduction to Global Supply Chain Management, International</li>
-            <li><span class="course__code">POLI 250</span>Principles of Comparative Politics</li>
-          </ul>
-          <h4 class="h-card" style="margin-top:20px">Languages</h4>
-          <ul class="course-list">
-            <li><span class="course__code">SPAN 321</span>Third Year Spanish Reading, Grammar, and Culture</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h4 class="h-card">Finance and accounting</h4>
-          <ul class="course-list">
-            <li class="is-key"><span class="course__code">FIN 201</span>Principles of Finance</li>
-            <li><span class="course__code">ACC 200</span>Principles of Accounting</li>
-            <li><span class="course__code">ECON 110</span>Economic Principles and Problems</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h4 class="h-card">Data and analytics</h4>
-          <ul class="course-list">
-            <li class="is-key"><span class="course__code">STAT 121</span>Introduction to Statistical Data Analysis</li>
-            <li><span class="course__code">IS 110</span>Spreadsheets and Business Analysis</li>
-            <li><span class="course__code">IS 201</span>Introduction to Information Systems</li>
-            <li><span class="course__code">IS 111</span>Introduction to AI in Business<span class="course__tag">In progress</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <details class="acc" style="margin-top:16px">
-        <summary><span class="acc__title">General education</span><span class="acc__meta">13 courses</span></summary>
-        <div class="acc__body">
-          <ul class="course-list course-list--cols">
-            <li><span class="course__code">A HTG 100</span>American Heritage</li>
-            <li><span class="course__code">WRTG 150</span>Writing and Rhetoric</li>
-            <li><span class="course__code">PHIL 110</span>Introduction to Philosophy</li>
-            <li><span class="course__code">IHUM 201</span>Western Humanities 1</li>
-            <li><span class="course__code">IHUM 241</span>Humanities of East Asia</li>
-            <li><span class="course__code">GEOL 109</span>Geology of Planets</li>
-            <li><span class="course__code">PHY S 100</span>Physical Science</li>
-            <li><span class="course__code">NDFS 100</span>Essentials of Human Nutrition</li>
-            <li><span class="course__code">STDEV 117</span>Career Exploration</li>
-            <li><span class="course__code">REL A 250</span>Christ and His Everlasting Gospel</li>
-            <li><span class="course__code">REL A 275</span>Teachings and Doctrine of the Book of Mormon</li>
-            <li><span class="course__code">REL C 225</span>Foundations of the Restoration</li>
-            <li><span class="course__code">REL C 333</span>The Living Prophets</li>
-          </ul>
-        </div>
-      </details>
     </div>
   </section>
 
@@ -601,20 +526,40 @@
 
       <div class="grid grid--2 projects">
 
-        <article class="card project" id="project-horizon">
-          <div class="card__head">
-            <h3 class="h-card">Horizon Planner</h3>
-            <span class="badge badge--shipped">Shipped</span>
-          </div>
-          <p class="card__body">A career diagnostic for Daybreak Collaborative. A short intake becomes a personalized
-            roadmap for people working in social impact, built with Next.js and the Claude API.</p>
-          <p class="project__outcome"><span>Outcome</span>100+ users in its launch month, and downloaded several thousand times.</p>
-          <div class="btn-row card__foot">
-            <a class="btn btn--primary btn--sm" href="https://github.com/kimballjh11/Social.Impact.Career.Trajectory">View in GitHub</a>
+        <article class="card project project--wide" id="project-horizon">
+          <div class="project__wide">
+            <div class="project__text">
+              <div class="card__head">
+                <h3 class="h-card">Horizon Planner</h3>
+                <span class="badge badge--shipped">Shipped</span>
+              </div>
+              <p class="card__body">A career diagnostic for Daybreak Collaborative. A short intake becomes a personalized
+                roadmap for people working in social impact, built with Next.js and the Claude API.</p>
+              <p class="project__outcome"><span>Outcome</span>100+ users in its launch month, and downloaded several thousand times.</p>
+              <div class="btn-row card__foot">
+                <a class="btn btn--primary btn--sm" href="https://github.com/kimballjh11/Social.Impact.Career.Trajectory">View in GitHub</a>
+                <a class="btn btn--secondary btn--sm" href="https://www.daybreak-collaborative.com/horizon-planner/">Open the live tool</a>
+              </div>
+            </div>
+
+            <div class="embed" id="hp-slot">
+              <div class="embed__placeholder">
+                <p class="h-card">Try the live tool here</p>
+                <p class="muted small">Each submission runs Claude and sends an email, so the tool loads only when you ask.</p>
+                <button class="btn btn--primary btn--sm" type="button" data-embed="iframe"
+                        data-src="https://www.daybreak-collaborative.com/horizon-planner/"
+                        data-title="Horizon Planner, live tool" aria-controls="hp-slot" hidden>Load the live tool</button>
+                <a class="small" href="https://www.daybreak-collaborative.com/horizon-planner/">Or open the real one at daybreak-collaborative.com</a>
+              </div>
+            </div>
           </div>
         </article>
 
         <article class="card project" id="project-trader">
+          <div class="card__media">
+            <img src="assets/projects/trader-dashboard.jpg" width="1170" height="825" loading="lazy"
+                 alt="Trading agent dashboard labeled as an illustrative October simulation, with equity lines for the Claude book, the rules only control book, and SPY.">
+          </div>
           <div class="card__head">
             <h3 class="h-card">Claude day trading agent</h3>
             <span class="badge badge--paper">Paper mode</span>
@@ -628,6 +573,10 @@
         </article>
 
         <article class="card project" id="project-plash">
+          <div class="card__media">
+            <img src="assets/projects/plash-dashboard.jpg" width="1400" height="918" loading="lazy"
+                 alt="Live desktop dashboard over a harbor photo, with tiles for the date and a verse, weather, Gmail, BYU Outlook, calendar, Canvas assignments, a daily checklist, news, and notes.">
+          </div>
           <div class="card__head">
             <h3 class="h-card">Plash dashboard</h3>
             <span class="badge badge--in-use">In use</span>
@@ -641,6 +590,10 @@
         </article>
 
         <article class="card project" id="project-heatmap">
+          <div class="card__media">
+            <img src="assets/projects/cfa-heatmap.jpg" width="1600" height="1000" loading="lazy"
+                 alt="Heatmap of catering order density across the western Minneapolis suburbs, with clusters around Maple Grove, Plymouth, and Minneapolis.">
+          </div>
           <div class="card__head">
             <h3 class="h-card">Chick-fil-A heatmap analysis</h3>
             <span class="badge badge--shipped">Shipped</span>
@@ -766,7 +719,7 @@
 }
 </script>
 
-<script src="main.js?v=11"></script>
-<script src="map.js?v=11"></script>
+<script src="main.js?v=13"></script>
+<script src="map.js?v=13"></script>
 </body>
 </html>
