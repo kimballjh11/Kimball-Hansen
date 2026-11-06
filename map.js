@@ -1,9 +1,9 @@
 /* Kimball Hansen, interactive US map on the About tab.
    Without this file the map still renders, each state keeps its native
-   <title> tooltip, and the lists under the map carry the same information.
+   <title> tooltip, and the SVG description carries the same information.
    With it: hover, tap, or focus a state for its name and status; arrow keys
    move between states (one tab stop for the whole map); markers show the
-   place name from the matching item in the "Places I have lived" list. */
+   place name. */
 
 (function () {
   "use strict";
@@ -79,9 +79,7 @@
 
   // Markers show the place name only.
   function cardHtml(m) {
-    var item = document.getElementById(m.getAttribute("data-card"));
-    var name = item && item.querySelector("strong");
-    return "<strong>" + (name ? name.textContent : m.getAttribute("aria-label")) + "</strong>" +
+    return "<strong>" + m.getAttribute("data-name") + "</strong>" +
       (m.classList.contains("usmap__marker--home") ? "Hometown" : "Lived here");
   }
 
