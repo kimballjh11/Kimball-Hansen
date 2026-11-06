@@ -30,6 +30,9 @@
   /* Map fills (Phase 2). Set --map-unvisited to var(--map-visited) for an all blue map. */
   --map-visited:   var(--blue);
   --map-unvisited: #D5DAE4;
+  --map-visited-hover:   #2B4BB3;
+  --map-unvisited-hover: #B9C1D1;
+  --ink-on-map:    #0F1729;
 
   --shadow-lift: 0 6px 20px rgba(15, 23, 41, 0.08);
 
@@ -65,6 +68,8 @@
     --line-strong: #34436A;
 
     --map-unvisited: #2C3854;
+    --map-visited-hover:   #6F8FF0;
+    --map-unvisited-hover: #3B4968;
     --shadow-lift: 0 6px 20px rgba(0, 0, 0, 0.35);
   }
 }
@@ -862,4 +867,83 @@ body.has-tabbar { padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bot
 }
 @media (max-width: 379px) {
   .header--case .wordmark__text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+
+/* 23 ─── About: map, legend, places, countries ──────────────────────── */
+
+.usmap { position: relative; max-width: 860px; margin: 20px auto 0; }
+.usmap__svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+.usmap__state { transition: fill 0.15s ease; }
+.usmap__state.is-visited   { fill: var(--map-visited); }
+.usmap__state.is-unvisited { fill: var(--map-unvisited); }
+.usmap__state.is-visited:hover,   .usmap__state.is-visited.is-active   { fill: var(--map-visited-hover); }
+.usmap__state.is-unvisited:hover, .usmap__state.is-unvisited.is-active { fill: var(--map-unvisited-hover); }
+.usmap__state:focus { outline: none; }
+.usmap__outline { fill: none; stroke: var(--ink-on-map); stroke-width: 2; stroke-linejoin: round; pointer-events: none; }
+.usmap__state:focus-visible ~ .usmap__outline, .usmap:focus-within .usmap__outline { stroke: var(--accent); stroke-width: 3; }
+
+.usmap__borders { fill: none; stroke: var(--surface); stroke-width: 1; stroke-linejoin: round; pointer-events: none; }
+
+.usmap__marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 30px; height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.usmap__marker svg { width: 20px; height: 20px; overflow: visible; transition: transform 0.15s ease; }
+.usmap__marker circle { fill: #fff; stroke: var(--ink-on-map); stroke-width: 3.5; }
+.usmap__marker--home svg { width: 28px; height: 28px; }
+.usmap__marker--home path { fill: var(--accent); stroke: var(--ink-on-map); stroke-width: 1.4; stroke-linejoin: round; }
+.usmap__marker:hover svg, .usmap__marker[aria-expanded="true"] svg { transform: scale(1.2); }
+.usmap__marker:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.8125rem; color: var(--ink-muted); }
+.legend li { display: inline-flex; align-items: center; gap: 6px; }
+.legend__swatch { width: 14px; height: 14px; border-radius: 4px; }
+.legend__swatch--visited { background: var(--map-visited); }
+.legend__swatch--unvisited { background: var(--map-unvisited); }
+.legend__dot { width: 13px; height: 13px; border-radius: 50%; background: #fff; border: 2.5px solid var(--ink-on-map); }
+.legend__star { width: 16px; height: 16px; }
+.legend__star path { fill: var(--accent); stroke: var(--ink-on-map); stroke-width: 1.4; }
+
+.map-lists { display: grid; gap: 20px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+@media (min-width: 768px) { .map-lists { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 32px; } }
+.place-list { margin-top: 8px; }
+.place-list li { font-size: 0.9375rem; color: var(--ink-muted); }
+.place-list li + li { margin-top: 8px; }
+.place-list strong { display: block; color: var(--ink); font-weight: 600; }
+.map-lists .small { margin-top: 8px; color: var(--ink-muted); }
+
+/* Tooltip card text for markers comes from .place-list items. */
+.tip strong { margin-bottom: 2px; }
+.tip .todo { color: #664D03; }
+
+.country-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.country-chips li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--blue) 35%, transparent);
+  background: var(--blue-soft);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.country-chips--next li { background: var(--surface); border-style: dashed; border-color: var(--line-strong); color: var(--ink-muted); }
+.x2 {
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #3A2400;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1.6;
 }
