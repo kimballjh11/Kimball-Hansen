@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="styles.css?v=17">
+<link rel="stylesheet" href="styles.css?v=18">
 </head>
 
 <body class="has-tabbar">
@@ -523,14 +523,10 @@
       <div class="grid grid--2 projects">
 
         <article class="card project project--third" id="project-horizon">
-          <div class="card__media embed" id="hp-slot">
-            <div class="embed__placeholder">
-              <p class="h-card">Try the live tool here</p>
-              <p class="muted small">Each submission runs Claude and sends an email, so the tool loads only when you ask.</p>
-              <button class="btn btn--primary btn--sm" type="button" data-embed="iframe"
-                      data-src="https://www.daybreak-collaborative.com/horizon-planner/"
-                      data-title="Horizon Planner, live tool" aria-controls="hp-slot" hidden>Load the live tool</button>
-            </div>
+          <div class="card__media live" id="hp-slot">
+            <iframe class="live__frame" src="https://www.daybreak-collaborative.com/horizon-planner/" loading="lazy"
+                    title="Horizon Planner, live site" referrerpolicy="strict-origin-when-cross-origin"
+                    sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-downloads"></iframe>
           </div>
           <div class="card__head">
             <h3 class="h-card">Horizon Planner</h3>
@@ -591,6 +587,10 @@
         </article>
 
         <article class="card project project--third" id="project-coach">
+          <div class="card__media">
+            <img src="assets/projects/coach-dashboard.jpg" width="1280" height="806" loading="lazy"
+                 alt="Community Projects Health Dashboard with counts for teams on track, caution, at risk, support needed, and not reported, above a table of teams with red, amber, and green health, contact, and confidence ratings.">
+          </div>
           <div class="card__head">
             <h3 class="h-card">Coach Health Dashboard</h3>
           </div>
@@ -701,7 +701,7 @@
 }
 </script>
 
-<script src="main.js?v=17"></script>
-<script src="map.js?v=17"></script>
+<script src="main.js?v=18"></script>
+<script src="map.js?v=18"></script>
 </body>
 </html>
